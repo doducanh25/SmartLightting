@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_title_select">#666</color>
+    <color name="background_bar">#FFFFFF</color>
+    <color name="text_color">#FF0000</color>
+    <color name="background_view_bar">#0099FF</color>
+    <color name="background_list_view_list_device">#EEEEEE</color>
+    <color name="text_color_button">#0099FF</color>
+    <color name="background_color_button_script_main_screen">#FF0000</color>
+    <color name="background_layout_relative_script_main_screen">#000000</color>
+    <color name="text_while">#FFFFFF</color>
+    <color name="text_yellow">#FFFF66</color>
+    <color name="text_black">#000000</color>
+</resources>

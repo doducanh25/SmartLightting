@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/border_background_edittext">
+
+    <LinearLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/icon_notification_dialog_login_screen_size"
+            android:layout_height="@dimen/icon_notification_dialog_login_screen_size"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/error"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/default_margin"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_button"
+            android:text="Bạn đăng nhập sai tài khoản \n Vui lòng đăng nhập lại"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_margin"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/dialogButtonOK"
+        android:layout_width="@dimen/button_ok_dialog_login_screen_width"
+        android:layout_height="50dp"
+        android:layout_below="@+id/layout_1"
+        android:text=" Ok "
+        android:layout_margin="5dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_round"/>
+
+</RelativeLayout>

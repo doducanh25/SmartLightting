@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_bar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_bar_title"
+        android:background="@color/background_title_select"
+        android:orientation="horizontal"
+        android:alpha="1">
+
+        <ImageView
+            android:id="@+id/back_detail_script"
+            android:layout_width="@dimen/image_logout_size"
+            android:layout_height="@dimen/image_logout_size"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_back" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/title_app"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="@dimen/image_logout_size"
+            android:layout_height="@dimen/image_logout_size"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_logout" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/background_view_bar"/>
+
+    <ListView
+        android:id="@+id/list_detail_script"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+</LinearLayout>

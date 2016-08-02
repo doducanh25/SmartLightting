@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_item_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_bar"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/name_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="@dimen/default_margin"
+            />
+        <ImageView
+            android:id="@+id/iv_detele"
+            android:layout_width="@dimen/image_detele_light_detail_group_size"
+            android:layout_height="@dimen/image_detele_light_detail_group_size"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_recycle_bin"
+            android:layout_margin="5dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$4$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$5$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$8$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$7$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$6$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$3$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$2$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\DetailGroupLightActivity$override.class
+CHANGED,E:\AndroidWorkSpace\Arduino Sensors\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ListGroupLightActivity$1$override.class

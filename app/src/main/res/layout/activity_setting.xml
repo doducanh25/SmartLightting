@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_bar"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_bar_title"
+        android:background="@color/background_bar"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/title_app"
+            android:textColor="@color/text_color"
+            android:textSize="18dp"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/back_login_screen"
+            android:layout_width="@dimen/image_logout_size"
+            android:layout_height="@dimen/image_logout_size"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:src="@drawable/ic_logout" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/background_view_bar" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg">
+
+        <RelativeLayout
+            android:id="@+id/layout_setting_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:alpha="0.3"
+            android:background="@color/background_layout_relative_script_main_screen">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="@string/setting_group_setting_screen"
+                android:textColor="@color/text_while"
+                android:textSize="40dp" />
+
+            <ImageView
+                android:layout_width="@dimen/image_next_setting_screen_width"
+                android:layout_height="@dimen/image_next_setting_screen_height"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/default_margin"
+                android:background="@drawable/ic_next" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_setting_script"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:alpha="0.3"
+            android:background="@color/background_layout_relative_script_main_screen">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="@string/setting_script_setting_screen"
+                android:textColor="@color/text_while"
+                android:textSize="40dp" />
+
+            <ImageView
+                android:layout_width="@dimen/image_next_setting_screen_width"
+                android:layout_height="@dimen/image_next_setting_screen_height"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/default_margin"
+                android:background="@drawable/ic_next" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_setting_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:alpha="0.3"
+            android:background="@color/background_layout_relative_script_main_screen">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="@string/control_setting_screen"
+                android:textColor="@color/text_while"
+                android:textSize="40dp" />
+
+            <ImageView
+                android:layout_width="@dimen/image_next_setting_screen_width"
+                android:layout_height="@dimen/image_next_setting_screen_height"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/default_margin"
+                android:background="@drawable/ic_next" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_setting_follow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:alpha="0.3"
+            android:background="@color/background_layout_relative_script_main_screen">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:text="@string/follow_setting_screen"
+                android:textColor="@color/text_while"
+                android:textSize="40dp" />
+
+            <ImageView
+                android:layout_width="@dimen/image_next_setting_screen_width"
+                android:layout_height="@dimen/image_next_setting_screen_height"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/default_margin"
+                android:background="@drawable/ic_next" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

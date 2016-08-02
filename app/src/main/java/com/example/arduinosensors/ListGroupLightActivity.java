@@ -36,6 +36,12 @@ public class ListGroupLightActivity extends Activity {
     RelativeLayout mLight4;
     RelativeLayout mLight5;
     RelativeLayout mLight6;
+    RelativeLayout mLight7;
+    RelativeLayout mLight8;
+    RelativeLayout mLight9;
+    RelativeLayout mLight10;
+    RelativeLayout mLight11;
+    RelativeLayout mLight12;
 
 
     ImageView mIvLight1;
@@ -57,6 +63,12 @@ public class ListGroupLightActivity extends Activity {
     TextView mTvLight4;
     TextView mTvLight5;
     TextView mTvLight6;
+    TextView mTvLight7;
+    TextView mTvLight8;
+    TextView mTvLight9;
+    TextView mTvLight10;
+    TextView mTvLight11;
+    TextView mTvLight12;
 
 
     boolean light1 = false;
@@ -65,6 +77,12 @@ public class ListGroupLightActivity extends Activity {
     boolean light4 = false;
     boolean light5 = false;
     boolean light6 = false;
+    boolean light7 = false;
+    boolean light8 = false;
+    boolean light9 = false;
+    boolean light10 = false;
+    boolean light11 = false;
+    boolean light12 = false;
 
     private String id_group;
     private int id_light;
@@ -79,6 +97,12 @@ public class ListGroupLightActivity extends Activity {
     private static final String idLight4 = "4";
     private static final String idLight5 = "5";
     private static final String idLight6 = "6";
+    private static final String idLight7 = "7";
+    private static final String idLight8 = "8";
+    private static final String idLight9 = "9";
+    private static final String idLight10 = "10";
+    private static final String idLight11 = "11";
+    private static final String idLight12 = "12";
 
     private File f1;
     private String pathLight;
@@ -112,6 +136,12 @@ public class ListGroupLightActivity extends Activity {
         mLight4 = (RelativeLayout) findViewById(R.id.light_4);
         mLight5 = (RelativeLayout) findViewById(R.id.light_5);
         mLight6 = (RelativeLayout) findViewById(R.id.light_6);
+        mLight7 = (RelativeLayout) findViewById(R.id.light_7);
+        mLight8 = (RelativeLayout) findViewById(R.id.light_8);
+        mLight9 = (RelativeLayout) findViewById(R.id.light_9);
+        mLight10 = (RelativeLayout) findViewById(R.id.light_10);
+        mLight11 = (RelativeLayout) findViewById(R.id.light_11);
+        mLight12 = (RelativeLayout) findViewById(R.id.light_12);
 
         mIvLight1 = (ImageView) findViewById(R.id.iv_light_1);
         mIvLight2 = (ImageView) findViewById(R.id.iv_light_2);
@@ -119,6 +149,13 @@ public class ListGroupLightActivity extends Activity {
         mIvLight4 = (ImageView) findViewById(R.id.iv_light_4);
         mIvLight5 = (ImageView) findViewById(R.id.iv_light_5);
         mIvLight6 = (ImageView) findViewById(R.id.iv_light_6);
+        mIvLight7 = (ImageView) findViewById(R.id.iv_light_7);
+        mIvLight8 = (ImageView) findViewById(R.id.iv_light_8);
+        mIvLight9 = (ImageView) findViewById(R.id.iv_light_9);
+        mIvLight10 = (ImageView) findViewById(R.id.iv_light_10);
+        mIvLight11 = (ImageView) findViewById(R.id.iv_light_11);
+        mIvLight12 = (ImageView) findViewById(R.id.iv_light_12);
+
 
         mTvLight1 = (TextView) findViewById(R.id.tv_light_1);
         mTvLight2 = (TextView) findViewById(R.id.tv_light_2);
@@ -126,6 +163,12 @@ public class ListGroupLightActivity extends Activity {
         mTvLight4 = (TextView) findViewById(R.id.tv_light_4);
         mTvLight5 = (TextView) findViewById(R.id.tv_light_5);
         mTvLight6 = (TextView) findViewById(R.id.tv_light_6);
+        mTvLight7 = (TextView) findViewById(R.id.tv_light_7);
+        mTvLight8 = (TextView) findViewById(R.id.tv_light_8);
+        mTvLight9 = (TextView) findViewById(R.id.tv_light_9);
+        mTvLight10 = (TextView) findViewById(R.id.tv_light_10);
+        mTvLight11 = (TextView) findViewById(R.id.tv_light_11);
+        mTvLight12 = (TextView) findViewById(R.id.tv_light_12);
 
         f1 = new File(Environment.getExternalStorageDirectory() + "/" + "Group", "data"+id_group+"-");
         if (!f1.exists()) {
@@ -339,6 +382,145 @@ public class ListGroupLightActivity extends Activity {
             }
         });
 
+        mLight7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!light7) {
+                    mIvLight7.setImageResource(R.drawable.ic_on);
+                    mTvLight7.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight7.setText(String.valueOf(id_light));
+
+                    File fileData = new File(f1,
+                            "data"+id_group + "-" + "7" + ".txt");
+                    try {
+                        outputStreamItem = new FileOutputStream(fileData);
+
+                        pwItem = new PrintWriter(outputStreamItem);
+
+                        pwItem.append(id_group + "-" + "7" + "\n");
+                        pwItem.flush();
+                        pwItem.close();
+
+                    } catch (FileNotFoundException c) {
+                        c.printStackTrace();
+                    }
+
+                } else {
+                    mIvLight7.setImageResource(R.drawable.ic_off);
+                    mTvLight7.setTextColor(getResources().getColor(R.color.text_black));
+                    mTvLight7.setText("");
+                    deleteLight("7");
+                }
+
+                light7 = !light7;
+            }
+        });
+
+
+        mLight8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!light8) {
+                    mIvLight8.setImageResource(R.drawable.ic_on);
+                    mTvLight8.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight8.setText(String.valueOf(id_light));
+
+                    File fileData = new File(f1,
+                            "data"+id_group + "-" + "8" + ".txt");
+                    try {
+                        outputStreamItem = new FileOutputStream(fileData);
+
+                        pwItem = new PrintWriter(outputStreamItem);
+
+                        pwItem.append(id_group + "-" + "8" + "\n");
+                        pwItem.flush();
+                        pwItem.close();
+
+                    } catch (FileNotFoundException c) {
+                        c.printStackTrace();
+                    }
+
+                } else {
+                    mIvLight8.setImageResource(R.drawable.ic_off);
+                    mTvLight8.setTextColor(getResources().getColor(R.color.text_black));
+                    mTvLight8.setText("");
+                    deleteLight("8");
+                }
+
+                light8 = !light8;
+            }
+        });
+
+
+        mLight9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!light9) {
+                    mIvLight9.setImageResource(R.drawable.ic_on);
+                    mTvLight9.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight9.setText(String.valueOf(id_light));
+
+                    File fileData = new File(f1,
+                            "data"+id_group + "-" + "9" + ".txt");
+                    try {
+                        outputStreamItem = new FileOutputStream(fileData);
+
+                        pwItem = new PrintWriter(outputStreamItem);
+
+                        pwItem.append(id_group + "-" + "9" + "\n");
+                        pwItem.flush();
+                        pwItem.close();
+
+                    } catch (FileNotFoundException c) {
+                        c.printStackTrace();
+                    }
+
+                } else {
+                    mIvLight9.setImageResource(R.drawable.ic_off);
+                    mTvLight9.setTextColor(getResources().getColor(R.color.text_black));
+                    mTvLight9.setText("");
+                    deleteLight("9");
+                }
+
+                light9 = !light9;
+            }
+        });
+
+        mLight10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!light10) {
+                    mIvLight10.setImageResource(R.drawable.ic_on);
+                    mTvLight10.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight10.setText(String.valueOf(id_light));
+
+                    File fileData = new File(f1,
+                            "data"+id_group + "-" + "10" + ".txt");
+                    try {
+                        outputStreamItem = new FileOutputStream(fileData);
+
+                        pwItem = new PrintWriter(outputStreamItem);
+
+                        pwItem.append(id_group + "-" + "10" + "\n");
+                        pwItem.flush();
+                        pwItem.close();
+
+                    } catch (FileNotFoundException c) {
+                        c.printStackTrace();
+                    }
+
+                } else {
+                    mIvLight10.setImageResource(R.drawable.ic_off);
+                    mTvLight10.setTextColor(getResources().getColor(R.color.text_black));
+                    mTvLight10.setText("");
+                    deleteLight("10");
+                }
+
+                light10 = !light10;
+            }
+        });
+
+
         mAcceptChooseLightIntoGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -465,7 +647,7 @@ public class ListGroupLightActivity extends Activity {
                 }
 
                 break;
-            default:
+            case idLight6:
                 mTvLight6.setText(idGroup);
                 mIvLight6.setImageResource(R.drawable.ic_on);
                 mTvLight6.setTextColor(getResources().getColor(R.color.text_yellow));
@@ -474,8 +656,73 @@ public class ListGroupLightActivity extends Activity {
 
                 if (Integer.parseInt(idGroup) == Integer.parseInt(id_group)) {
                     mLight6.setEnabled(true);
+
                 } else {
                     mLight6.setEnabled(false);
+                }
+
+                break;
+
+            case idLight7:
+                mTvLight7.setText(idGroup);
+                mIvLight7.setImageResource(R.drawable.ic_on);
+                mTvLight7.setTextColor(getResources().getColor(R.color.text_yellow));
+
+                light7 = true;
+
+                if (Integer.parseInt(idGroup) == Integer.parseInt(id_group)) {
+                    mLight7.setEnabled(true);
+
+                } else {
+                    mLight7.setEnabled(false);
+                }
+
+                break;
+
+            case idLight8:
+                mTvLight8.setText(idGroup);
+                mIvLight8.setImageResource(R.drawable.ic_on);
+                mTvLight8.setTextColor(getResources().getColor(R.color.text_yellow));
+
+                light8 = true;
+
+                if (Integer.parseInt(idGroup) == Integer.parseInt(id_group)) {
+                    mLight8.setEnabled(true);
+
+                } else {
+                    mLight8.setEnabled(false);
+                }
+
+                break;
+
+            case idLight9:
+                mTvLight9.setText(idGroup);
+                mIvLight9.setImageResource(R.drawable.ic_on);
+                mTvLight9.setTextColor(getResources().getColor(R.color.text_yellow));
+
+                light9 = true;
+
+                if (Integer.parseInt(idGroup) == Integer.parseInt(id_group)) {
+                    mLight9.setEnabled(true);
+
+                } else {
+                    mLight9.setEnabled(false);
+                }
+
+                break;
+
+
+            default:
+                mTvLight10.setText(idGroup);
+                mIvLight10.setImageResource(R.drawable.ic_on);
+                mTvLight10.setTextColor(getResources().getColor(R.color.text_yellow));
+
+                light10 = true;
+
+                if (Integer.parseInt(idGroup) == Integer.parseInt(id_group)) {
+                    mLight10.setEnabled(true);
+                } else {
+                    mLight10.setEnabled(false);
                 }
 
                 break;

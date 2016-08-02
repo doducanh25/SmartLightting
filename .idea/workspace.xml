@@ -39,9 +39,22 @@
       <file leaf-file-name="ListGroupLightActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ListGroupLightActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57781756">
-              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-              <folding />
+            <state vertical-scroll-proportion="0.48300537">
+              <caret line="708" column="27" selection-start-line="708" selection-start-column="27" selection-end-line="708" selection-end-column="27" />
+              <folding>
+                <element signature="e#6028#7273#0" expanded="true" />
+                <element signature="e#7272#7273#0" expanded="true" />
+                <element signature="e#12444#13688#0" expanded="true" />
+                <element signature="e#13687#13688#0" expanded="true" />
+                <element signature="e#13727#14971#0" expanded="true" />
+                <element signature="e#14970#14971#0" expanded="true" />
+                <element signature="e#15011#16255#0" expanded="true" />
+                <element signature="e#16254#16255#0" expanded="true" />
+                <element signature="e#16295#17539#0" expanded="true" />
+                <element signature="e#17538#17539#0" expanded="true" />
+                <element signature="e#17579#18835#0" expanded="true" />
+                <element signature="e#18834#18835#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2311,9 +2324,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ListGroupLightActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57781756">
-          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.48300537">
+          <caret line="708" column="27" selection-start-line="708" selection-start-column="27" selection-end-line="708" selection-end-column="27" />
+          <folding>
+            <element signature="e#6028#7273#0" expanded="true" />
+            <element signature="e#7272#7273#0" expanded="true" />
+            <element signature="e#12444#13688#0" expanded="true" />
+            <element signature="e#13687#13688#0" expanded="true" />
+            <element signature="e#13727#14971#0" expanded="true" />
+            <element signature="e#14970#14971#0" expanded="true" />
+            <element signature="e#15011#16255#0" expanded="true" />
+            <element signature="e#16254#16255#0" expanded="true" />
+            <element signature="e#16295#17539#0" expanded="true" />
+            <element signature="e#17538#17539#0" expanded="true" />
+            <element signature="e#17579#18835#0" expanded="true" />
+            <element signature="e#18834#18835#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

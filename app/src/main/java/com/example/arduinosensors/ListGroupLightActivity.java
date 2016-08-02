@@ -44,6 +44,12 @@ public class ListGroupLightActivity extends Activity {
     ImageView mIvLight4;
     ImageView mIvLight5;
     ImageView mIvLight6;
+    ImageView mIvLight7;
+    ImageView mIvLight8;
+    ImageView mIvLight9;
+    ImageView mIvLight10;
+    ImageView mIvLight11;
+    ImageView mIvLight12;
 
     TextView mTvLight1;
     TextView mTvLight2;

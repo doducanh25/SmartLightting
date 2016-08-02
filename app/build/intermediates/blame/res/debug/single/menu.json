@@ -2,5 +2,9 @@
     {
         "merged": "E:\\AndroidWorkSpace\\Arduino Sensors\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
         "source": "E:\\AndroidWorkSpace\\Arduino Sensors\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\menu\\main.xml"
     }
 ]

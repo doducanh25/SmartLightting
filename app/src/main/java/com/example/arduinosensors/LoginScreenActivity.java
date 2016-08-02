@@ -57,6 +57,7 @@ public class LoginScreenActivity extends Activity {
 
                 if (input.contains("1234")) {
                     Intent int_send_setting = new Intent(LoginScreenActivity.this,SettingActivity.class);
+                    int_send_setting.putExtra("device_address", address);
                     startActivity(int_send_setting);
                 } else {
                     final Dialog dialog = new Dialog(LoginScreenActivity.this);

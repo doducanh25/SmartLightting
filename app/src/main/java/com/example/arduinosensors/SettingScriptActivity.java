@@ -54,13 +54,18 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
 
         setContentView(R.layout.activity_setting_script);
 
+        Intent intent = getIntent();
+        final String address = intent.getStringExtra("device_address");
+
         mListScript = (ListView) findViewById(R.id.list_detail_script);
 
         mBack = (ImageView) findViewById(R.id.back_detail_script);
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent1 = new Intent(SettingScriptActivity.this,SettingActivity.class);
+                intent1.putExtra("device_address",address);
+                startActivity(intent1);
             }
         });
 

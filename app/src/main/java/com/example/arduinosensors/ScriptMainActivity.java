@@ -13,9 +13,11 @@ import java.io.PrintWriter;
 import java.util.UUID;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -67,11 +69,37 @@ public class ScriptMainActivity extends Activity {
     private String path;
     private String dataDim = "0";
 
+    private String pathScript;
+
+    private static  final String script1 = "1";
+    private static  final String script2 = "2";
+    private static  final String script3 = "3";
+    private static  final String script4 = "4";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        pathScript = Environment.getExternalStorageDirectory().toString() + "/DucAnh";
+
+        File folder = new File(pathScript);
+        File[] item = folder.listFiles();
+        if (item.length ==0) {
+            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setMessage("Chào bạn!" + "\n"+ "Hãy đăng nhập để sử dụng ứng dụng");
+
+            alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    arg0.dismiss();
+                }
+            });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
 
 
         btnLevelOne = (Button) findViewById(R.id.btnLevelOne);
@@ -171,7 +199,7 @@ public class ScriptMainActivity extends Activity {
                             }
                         }
                     } else {
-                        mConnectedThread.write("DIM" + "-" + "0");
+                        mConnectedThread.write("100");
                     }
 
                 } else {
@@ -326,6 +354,36 @@ public class ScriptMainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+
+        File fScript = new File(pathScript,"1");
+        if (fScript.exists()) {
+            btnLevelOne.setVisibility(View.VISIBLE);
+        } else {
+            btnLevelOne.setVisibility(View.INVISIBLE);
+        }
+
+        File fScript2 = new File(pathScript,"2");
+        if (fScript2.exists()) {
+            btnLevelTwo.setVisibility(View.VISIBLE);
+        } else {
+            btnLevelTwo.setVisibility(View.INVISIBLE);
+        }
+
+        File fScript3 = new File(pathScript,"3");
+        if (fScript3.exists()) {
+            btnLevelThree.setVisibility(View.VISIBLE);
+        } else {
+            btnLevelThree.setVisibility(View.INVISIBLE);
+        }
+
+        File fScript4 = new File(pathScript,"4");
+        if (fScript4.exists()) {
+            btnLevelFour.setVisibility(View.VISIBLE);
+        } else {
+            btnLevelFour.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {

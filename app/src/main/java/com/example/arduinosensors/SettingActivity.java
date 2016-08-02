@@ -21,6 +21,10 @@ public class SettingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
+        Intent intent = getIntent();
+
+        final String address = intent.getStringExtra("device_address");
+
         mlayoutSettingGroup = (RelativeLayout) findViewById(R.id.layout_setting_group);
         mlayoutSettingGroup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +39,7 @@ public class SettingActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingActivity.this,SettingScriptActivity.class);
+                intent.putExtra("device_address",address);
                 startActivity(intent);
 
             }
@@ -44,6 +49,10 @@ public class SettingActivity extends Activity {
         mLayoutSettingControl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(SettingActivity.this,ScriptMainActivity.class);
+                intent.putExtra("device_address",address);
+                startActivity(intent);
 
             }
         });

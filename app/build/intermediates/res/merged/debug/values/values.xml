@@ -26,6 +26,7 @@
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="background_bar">#FFFFFF</color>
+    <color name="background_button_script">#FFFF99</color>
     <color name="background_color_button_script_main_screen">#FF0000</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>

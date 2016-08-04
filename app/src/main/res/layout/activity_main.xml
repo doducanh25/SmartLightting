@@ -64,7 +64,8 @@
                     android:layout_weight="1"
                     android:text="@string/script_1"
                     android:textColor="@color/text_color_button"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="@dimen/text_size"
+                    android:background="@color/background_button_script"/>
 
                 <Button
                     android:id="@+id/btnLevelTwo"
@@ -75,7 +76,8 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:text="@string/script_2"
-                    android:textColor="@color/text_color_button" />
+                    android:textColor="@color/text_color_button"
+                    android:background="@color/background_button_script"/>
             </LinearLayout>
 
             <LinearLayout
@@ -92,7 +94,8 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:text="@string/script_3"
-                    android:textColor="@color/text_color_button" />
+                    android:textColor="@color/text_color_button"
+                    android:background="@color/background_button_script"/>
 
                 <Button
                     android:id="@+id/btnLevelFour"
@@ -101,7 +104,8 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:text="@string/script_4"
-                    android:textColor="@color/text_color_button" />
+                    android:textColor="@color/text_color_button"
+                    android:background="@color/background_button_script"/>
 
             </LinearLayout>
 

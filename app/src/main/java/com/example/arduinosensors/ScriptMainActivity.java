@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.StringTokenizer;
 import java.util.UUID;
 
 import android.app.Activity;
@@ -70,11 +71,16 @@ public class ScriptMainActivity extends Activity {
     private String dataDim = "0";
 
     private String pathScript;
+    private String pathSaveScript;
 
-    private static  final String script1 = "1";
-    private static  final String script2 = "2";
-    private static  final String script3 = "3";
-    private static  final String script4 = "4";
+    private static  final String script1 = "0";
+    private static  final String script2 = "1";
+    private static  final String script3 = "2";
+    private static  final String script4 = "3";
+
+    private File fileData;
+    private static FileOutputStream outputStream;
+    private PrintWriter pw;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -101,6 +107,22 @@ public class ScriptMainActivity extends Activity {
             alertDialog.show();
         }
 
+        File sdcard = Environment.getExternalStorageDirectory();
+        File fSave = new File(sdcard.getAbsolutePath() + "/SaveScript/");
+
+        if (!fSave.exists()) {
+            fSave.mkdir();
+        }
+
+        fileData = new File(fSave, "savescript" + ".txt");
+        if(!fileData.exists()) {
+            try {
+                fileData.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
 
         btnLevelOne = (Button) findViewById(R.id.btnLevelOne);
         btnLevelTwo = (Button) findViewById(R.id.btnLevelTwo);
@@ -126,6 +148,23 @@ public class ScriptMainActivity extends Activity {
             public void onClick(View v) {
                 mConnectedThread.write("0");    // Send "0" via Bluetooth
                 Toast.makeText(getBaseContext(), "Turn On Level One", Toast.LENGTH_SHORT).show();
+                btnLevelOne.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+
+                try {
+                    outputStream = new FileOutputStream(fileData);
+                    pw = new PrintWriter(outputStream);
+                    pw.append(String.valueOf(0));
+                    pw.flush();
+                    pw.close();
+
+                } catch (FileNotFoundException c) {
+                    c.printStackTrace();
+                }
+
             }
         });
 
@@ -133,6 +172,22 @@ public class ScriptMainActivity extends Activity {
             public void onClick(View v) {
                 mConnectedThread.write("1");    // Send "1" via Bluetooth
                 Toast.makeText(getBaseContext(), "Turn On Level Two", Toast.LENGTH_SHORT).show();
+                btnLevelTwo.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                try {
+                    outputStream = new FileOutputStream(fileData);
+                    pw = new PrintWriter(outputStream);
+                    pw.append(String.valueOf(1));
+                    pw.flush();
+                    pw.close();
+
+                } catch (FileNotFoundException c) {
+                    c.printStackTrace();
+                }
+
             }
         });
 
@@ -141,6 +196,21 @@ public class ScriptMainActivity extends Activity {
             public void onClick(View v) {
                 mConnectedThread.write("2");
                 Toast.makeText(getBaseContext(), "Turn On Level Three", Toast.LENGTH_SHORT).show();
+                btnLevelThree.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                try {
+                    outputStream = new FileOutputStream(fileData);
+                    pw = new PrintWriter(outputStream);
+                    pw.append(String.valueOf(2));
+                    pw.flush();
+                    pw.close();
+
+                } catch (FileNotFoundException c) {
+                    c.printStackTrace();
+                }
             }
         });
 
@@ -149,6 +219,22 @@ public class ScriptMainActivity extends Activity {
             public void onClick(View v) {
                 mConnectedThread.write("3");
                 Toast.makeText(getBaseContext(), "Turn On Level Four", Toast.LENGTH_SHORT).show();
+
+                btnLevelFour.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                btnLevelOne.setBackgroundResource(R.color.background_button_script);
+
+                try {
+                    outputStream = new FileOutputStream(fileData);
+                    pw = new PrintWriter(outputStream);
+                    pw.append(String.valueOf(3));
+                    pw.flush();
+                    pw.close();
+
+                } catch (FileNotFoundException c) {
+                    c.printStackTrace();
+                }
             }
         });
 
@@ -214,12 +300,100 @@ public class ScriptMainActivity extends Activity {
                     btnLevelTwo.setEnabled(true);
                     btnLevelThree.setEnabled(true);
                     btnLevelFour.setEnabled(true);
+
+                    String pathReadFile = Environment.getExternalStorageDirectory().toString() + "/SaveScript";
+
+                    File fReadFile = new File(pathReadFile);
+                    File fileList[] = fReadFile.listFiles();
+
+                    String dataScriptFile = "0";
+
+                    if (fileList.length != 0) {
+
+                        for (int i = 0; i < fileList.length; i++) {
+                            try {
+                                FileInputStream isFile = new FileInputStream(new File(fReadFile + "/" + fileList[i].getName()));
+                                BufferedReader readerFile = new BufferedReader(new InputStreamReader(isFile));
+                                if (isFile != null) {
+                                    try {
+                                        while ((dataScriptFile = readerFile.readLine()) != null) {
+
+//                                            String[] item = dataScript.split("-");
+//                                            byte ptext[] = item[1].getBytes();
+//                                            String value = new String(ptext, "UTF-8");
+
+
+                                            switch (dataScriptFile){
+                                                case script1:
+                                                    mConnectedThread.write("0");
+                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+                                                    break;
+                                                case script2:
+                                                    mConnectedThread.write("1");
+                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+                                                    break;
+                                                case script3:
+                                                    mConnectedThread.write("2");
+                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+                                                    break;
+                                                default :
+                                                    mConnectedThread.write("3");
+                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+                                                    break;
+                                            }
+//
+                                            if (dataScriptFile.contains("0")) {
+
+                                                btnLevelOne.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                                            } else if (dataScriptFile.contains("1")) {
+
+                                                btnLevelTwo.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                                btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                                            } else if (dataScriptFile.contains("2")) {
+
+                                                btnLevelThree.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                                btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                                            } else if (dataScriptFile.contains("3")) {
+
+                                                btnLevelFour.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                                btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelThree.setBackgroundResource(R.color.background_button_script);
+
+                                            }
+
+                                        }
+                                        isFile.close();
+                                    } catch (IOException ee) {
+                                        // TODO Auto-generated catch block
+                                        ee.printStackTrace();
+                                    }
+                                }
+                            } catch (FileNotFoundException eee) {
+                                Log.e("e", "File not found: " + eee.toString());
+                            }
+                        }
+                    }
+
                 }
 
                 isChoose = !isChoose;
 
             }
         });
+
+
+
 
         path = Environment.getExternalStorageDirectory().toString() + "/DimLight";
         Log.d("Files", "Path: " + path);
@@ -281,7 +455,6 @@ public class ScriptMainActivity extends Activity {
 
                                     }
                                 });
-
 
                             }
                             is.close();
@@ -414,6 +587,73 @@ public class ScriptMainActivity extends Activity {
 
         mConnectedThread = new ConnectedThread(btSocket);
         mConnectedThread.start();
+
+
+        String pathReadFile = Environment.getExternalStorageDirectory().toString() + "/SaveScript";
+
+        File fReadFile = new File(pathReadFile);
+        File fileList[] = fReadFile.listFiles();
+
+        String dataScript = "0";
+
+        if (fileList.length != 0) {
+
+            for (int i = 0; i < fileList.length; i++) {
+                try {
+                    FileInputStream is = new FileInputStream(new File(fReadFile + "/" + fileList[i].getName()));
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                    if (is != null) {
+                        try {
+                            while ((dataScript = reader.readLine()) != null) {
+
+                                Log.d("send",dataScript);
+
+                                mConnectedThread.write(dataScript);
+//
+                                if (dataScript.contains("0")) {
+
+                                    btnLevelOne.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                    btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                                } else if (dataScript.contains("1")) {
+
+                                    btnLevelTwo.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                    btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                                } else if (dataScript.contains("2")) {
+
+                                    btnLevelThree.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                    btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelFour.setBackgroundResource(R.color.background_button_script);
+
+                                } else if (dataScript.contains("3")) {
+
+                                    btnLevelFour.setBackgroundResource(R.color.background_color_button_script_main_screen);
+                                    btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelTwo.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelThree.setBackgroundResource(R.color.background_button_script);
+
+                                }
+
+                            }
+                            is.close();
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (FileNotFoundException e) {
+                    Log.e("e", "File not found: " + e.toString());
+                }
+            }
+        }
+
+
 
     }
 

@@ -11,4 +11,5 @@
     <color name="text_while">#FFFFFF</color>
     <color name="text_yellow">#FFFF66</color>
     <color name="text_black">#000000</color>
+    <color name="background_button_script">#FFFF99</color>
 </resources>

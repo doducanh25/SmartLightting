@@ -66,7 +66,7 @@ public class DetailGroupLightAdapter extends BaseAdapter {
 
         final Light light = mLight.get(position);
 
-        holder.mNameLight.setText(light.getmNameLight());
+        holder.mNameLight.setText("Đèn"+" "+light.getmNameLight());
         holder.mDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

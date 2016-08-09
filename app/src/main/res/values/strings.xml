@@ -24,4 +24,9 @@
     <string name="follow_setting_screen">Theo dõi</string>
     <string name="add_light_to_group">Thêm đèn vào nhóm</string>
     <string name="add_script">Thêm kịch bản</string>
+    <string name="login_title">Đăng nhập</string>
+    <string name="setting_title">Cài Đặt Hệ Thống</string>
+    <string name="detail_group_title">Chi tiết nhóm</string>
+    <string name="detail_script_title">Chi tiết kịch bản</string>
+    <string name="list_lights_title">Danh sách đèn</string>
 </resources>

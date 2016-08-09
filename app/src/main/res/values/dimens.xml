@@ -19,5 +19,10 @@
     <dimen name="image_next_setting_screen_width">30dp</dimen>
     <dimen name="image_detele_light_detail_group_size">60dp</dimen>
     <dimen name="icon_light_list_group_light_size">50dp</dimen>
+    <dimen name="icon_back_size">35dp</dimen>
+    <dimen name="input_password_height">60dp</dimen>
+    <dimen name="margin_left_icon">30dp</dimen>
+    <dimen name="text_size_title">25sp</dimen>
+    <dimen name="image_logo_size_setting_group">40dp</dimen>
 
 </resources>

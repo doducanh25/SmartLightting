@@ -85,6 +85,7 @@ public class ListGroupLightActivity extends Activity {
     boolean light12 = false;
 
     private String id_group;
+    private String address;
     private int id_light;
 
     String path;
@@ -116,19 +117,12 @@ public class ListGroupLightActivity extends Activity {
 
         Intent intent = getIntent();
         id_group = intent.getStringExtra("id_group");
+        address = intent.getStringExtra("device_address");
 
 
         id_light = Integer.parseInt(id_group);
 
-        mBack = (ImageView) findViewById(R.id.back);
         mAcceptChooseLightIntoGroup = (Button) findViewById(R.id.accept_choose_light);
-
-        mBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         mLight1 = (RelativeLayout) findViewById(R.id.light_1);
         mLight2 = (RelativeLayout) findViewById(R.id.light_2);
@@ -182,7 +176,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light1) {
                     mIvLight1.setImageResource(R.drawable.ic_on);
-                    mTvLight1.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight1.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight1.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -217,7 +211,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light2) {
                     mIvLight2.setImageResource(R.drawable.ic_on);
-                    mTvLight2.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight2.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight2.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -251,7 +245,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light3) {
                     mIvLight3.setImageResource(R.drawable.ic_on);
-                    mTvLight3.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight3.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight3.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -285,7 +279,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light4) {
                     mIvLight4.setImageResource(R.drawable.ic_on);
-                    mTvLight4.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight4.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight4.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -319,7 +313,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light5) {
                     mIvLight5.setImageResource(R.drawable.ic_on);
-                    mTvLight5.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight5.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight5.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -353,7 +347,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light6) {
                     mIvLight6.setImageResource(R.drawable.ic_on);
-                    mTvLight6.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight6.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight6.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -387,7 +381,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light7) {
                     mIvLight7.setImageResource(R.drawable.ic_on);
-                    mTvLight7.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight7.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight7.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -422,7 +416,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light8) {
                     mIvLight8.setImageResource(R.drawable.ic_on);
-                    mTvLight8.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight8.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight8.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -457,7 +451,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light9) {
                     mIvLight9.setImageResource(R.drawable.ic_on);
-                    mTvLight9.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight9.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight9.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -491,7 +485,7 @@ public class ListGroupLightActivity extends Activity {
             public void onClick(View v) {
                 if (!light10) {
                     mIvLight10.setImageResource(R.drawable.ic_on);
-                    mTvLight10.setTextColor(getResources().getColor(R.color.text_yellow));
+                    mTvLight10.setTextColor(getResources().getColor(R.color.text_color));
                     mTvLight10.setText(String.valueOf(id_light));
 
                     File fileData = new File(f1,
@@ -527,6 +521,7 @@ public class ListGroupLightActivity extends Activity {
 
                 Intent intent1 = new Intent(ListGroupLightActivity.this, DetailGroupLightActivity.class);
                 intent1.putExtra("id", id_group);
+                intent1.putExtra("device_address",address);
                 startActivity(intent1);
             }
         });

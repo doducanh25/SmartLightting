@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_bar_title"
         android:alpha="1"
-        android:background="@color/background_title_select"
+        android:background="@color/background_bar"
         android:orientation="horizontal">
 
         <ImageView
@@ -18,26 +18,25 @@
             android:layout_height="@dimen/image_logout_size"
             android:layout_gravity="center"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/ic_back" />
+            android:src="@drawable/ic_back"
+            android:visibility="gone"/>
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/icon_light_list_group_light_size"
+            android:layout_height="@dimen/icon_light_list_group_light_size"
             android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_margin="10dp"
             android:background="@drawable/icon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/title_app"
+            android:text="@string/list_lights_title"
             android:textColor="@color/text_color"
-            android:textSize="17sp"
-            android:textStyle="italic" />
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="italic"
+            android:layout_marginLeft="@dimen/default_margin"/>
 
         <ImageView
             android:id="@+id/logout"
@@ -46,7 +45,8 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
-            android:src="@drawable/ic_logout" />
+            android:src="@drawable/ic_logout"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
@@ -92,6 +92,14 @@
                         android:layout_alignBottom="@id/iv_light_1"
                         android:layout_toRightOf="@+id/iv_light_1"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_1"
+                        android:layout_toRightOf="@+id/iv_light_1"
+                        android:textSize="6sp"
+                        android:text="đèn 1"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -114,6 +122,14 @@
                         android:layout_alignBottom="@id/iv_light_2"
                         android:layout_toRightOf="@+id/iv_light_2"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_2"
+                        android:layout_toRightOf="@+id/iv_light_2"
+                        android:textSize="6sp"
+                        android:text="đèn 2"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -136,6 +152,14 @@
                         android:layout_alignBottom="@id/iv_light_3"
                         android:layout_toRightOf="@+id/iv_light_3"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_3"
+                        android:layout_toRightOf="@+id/iv_light_3"
+                        android:textSize="6sp"
+                        android:text="đèn 3"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -158,6 +182,14 @@
                         android:layout_alignBottom="@id/iv_light_4"
                         android:layout_toRightOf="@+id/iv_light_4"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_4"
+                        android:layout_toRightOf="@+id/iv_light_4"
+                        android:textSize="6sp"
+                        android:text="đèn 4"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -189,6 +221,14 @@
                         android:layout_alignBottom="@id/iv_light_5"
                         android:layout_toRightOf="@+id/iv_light_5"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_5"
+                        android:layout_toRightOf="@+id/iv_light_5"
+                        android:textSize="6sp"
+                        android:text="đèn 5"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -211,6 +251,14 @@
                         android:layout_alignBottom="@id/iv_light_6"
                         android:layout_toRightOf="@+id/iv_light_6"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_6"
+                        android:layout_toRightOf="@+id/iv_light_6"
+                        android:textSize="6sp"
+                        android:text="đèn 6"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -233,6 +281,14 @@
                         android:layout_alignBottom="@id/iv_light_7"
                         android:layout_toRightOf="@+id/iv_light_7"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_7"
+                        android:layout_toRightOf="@+id/iv_light_7"
+                        android:textSize="6sp"
+                        android:text="đèn 7"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -255,6 +311,14 @@
                         android:layout_alignBottom="@id/iv_light_8"
                         android:layout_toRightOf="@+id/iv_light_8"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_8"
+                        android:layout_toRightOf="@+id/iv_light_8"
+                        android:textSize="6sp"
+                        android:text="đèn 8"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -286,6 +350,14 @@
                         android:layout_alignBottom="@id/iv_light_9"
                         android:layout_toRightOf="@+id/iv_light_9"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_9"
+                        android:layout_toRightOf="@+id/iv_light_9"
+                        android:textSize="6sp"
+                        android:text="đèn 9"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -308,6 +380,14 @@
                         android:layout_alignBottom="@id/iv_light_10"
                         android:layout_toRightOf="@+id/iv_light_10"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_10"
+                        android:layout_toRightOf="@+id/iv_light_10"
+                        android:textSize="6sp"
+                        android:text="đèn 10"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -330,6 +410,14 @@
                         android:layout_alignBottom="@id/iv_light_11"
                         android:layout_toRightOf="@+id/iv_light_11"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_11"
+                        android:layout_toRightOf="@+id/iv_light_11"
+                        android:textSize="6sp"
+                        android:text="đèn 11"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -352,6 +440,14 @@
                         android:layout_alignBottom="@id/iv_light_12"
                         android:layout_toRightOf="@+id/iv_light_12"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_12"
+                        android:layout_toRightOf="@+id/iv_light_12"
+                        android:textSize="6sp"
+                        android:text="đèn 12"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -383,6 +479,14 @@
                         android:layout_alignBottom="@id/iv_light_13"
                         android:layout_toRightOf="@+id/iv_light_13"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_13"
+                        android:layout_toRightOf="@+id/iv_light_13"
+                        android:textSize="6sp"
+                        android:text="đèn 13"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -405,6 +509,14 @@
                         android:layout_alignBottom="@id/iv_light_14"
                         android:layout_toRightOf="@+id/iv_light_14"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_14"
+                        android:layout_toRightOf="@+id/iv_light_14"
+                        android:textSize="6sp"
+                        android:text="đèn 14"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -427,6 +539,14 @@
                         android:layout_alignBottom="@id/iv_light_15"
                         android:layout_toRightOf="@+id/iv_light_15"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_15"
+                        android:layout_toRightOf="@+id/iv_light_15"
+                        android:textSize="6sp"
+                        android:text="đèn 15"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -449,6 +569,14 @@
                         android:layout_alignBottom="@id/iv_light_16"
                         android:layout_toRightOf="@+id/iv_light_16"
                         android:textSize="@dimen/text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/iv_light_16"
+                        android:layout_toRightOf="@+id/iv_light_16"
+                        android:textSize="6sp"
+                        android:text="đèn 16"
+                        android:textColor="@color/text_color"/>
                 </RelativeLayout>
 
             </LinearLayout>
@@ -855,7 +983,8 @@
                     android:gravity="center"
                     android:text="@string/button_ok_screen_login"
                     android:textSize="@dimen/text_size"
-                    android:layout_marginBottom="@dimen/default_margin"/>
+                    android:layout_marginBottom="@dimen/default_margin"
+                    android:textColor="@color/text_while"/>
 
             </RelativeLayout>
         </LinearLayout>

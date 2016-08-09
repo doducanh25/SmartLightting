@@ -35,6 +35,7 @@ public class DetailGroupLightActivity extends Activity implements DetailGroupLig
     RelativeLayout mAddLight;
 
     private String id_group;
+    private String address;
     private File f1;
 
     ImageView mBack;
@@ -47,16 +48,17 @@ public class DetailGroupLightActivity extends Activity implements DetailGroupLig
 
         setContentView(R.layout.activity_detail_group_light);
 
-
-
         Intent intent = getIntent();
         id_group = intent.getStringExtra("id");
+        address = intent.getStringExtra("device_address");
 
         mBack = (ImageView) findViewById(R.id.back_detail_group);
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(DetailGroupLightActivity.this,SettingGroupActivity.class);
+                intent1.putExtra("device_address",address);
+
                 startActivity(intent1);
             }
         });
@@ -72,6 +74,7 @@ public class DetailGroupLightActivity extends Activity implements DetailGroupLig
             public void onClick(View v) {
                 Intent intent = new Intent(DetailGroupLightActivity.this,ListGroupLightActivity.class);
                 intent.putExtra("id_group",id_group);
+                intent.putExtra("device_address",address);
                 startActivity(intent);
             }
         });

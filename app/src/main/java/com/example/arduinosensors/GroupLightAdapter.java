@@ -82,7 +82,7 @@ public class GroupLightAdapter extends BaseAdapter {
 
         final Groups groups = mLight.get(position);
 
-        holder.mNameGroup.setText(groups.getmNameGroupLight());
+        holder.mNameGroup.setText("Nhóm" +" "+groups.getmNameGroupLight());
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override

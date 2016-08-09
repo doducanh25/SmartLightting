@@ -30,6 +30,7 @@ public class SettingActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingActivity.this,SettingGroupActivity.class);
+                intent.putExtra("device_address",address);
                 startActivity(intent);
             }
         });

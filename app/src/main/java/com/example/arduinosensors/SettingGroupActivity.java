@@ -1,11 +1,17 @@
 package com.example.arduinosensors;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -21,13 +27,19 @@ import android.widget.Toast;
 
 import com.google.android.gms.gcm.Task;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by user on 19/07/2016.
@@ -48,6 +60,13 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
     private PrintWriter pw;
 
     private ImageView mBack;
+    private ImageView mSendApiGroup;
+
+    private BluetoothAdapter btAdapter = null;
+    private BluetoothSocket btSocket = null;
+    private static final UUID BTMODULEUUID = UUID.fromString("04c6093b-0000-1000-8000-00805f9b34fb");
+    public static ConnectedThreadGroup mSend;
+    private String address;
 
 
 
@@ -57,6 +76,10 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
 
         setContentView(R.layout.activity_setting_group);
 
+        Intent intent = getIntent();
+        address = intent.getStringExtra("device_address");
+        Log.d("send",address);
+
         mListGroup = (ListView) findViewById(R.id.list_group_light);
 
         mBack = (ImageView) findViewById(R.id.back);
@@ -65,9 +88,95 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingGroupActivity.this,SettingActivity.class);
+                intent.putExtra("device_address",address);
                 startActivity(intent);
             }
         });
+
+        mSendApiGroup = (ImageView) findViewById(R.id.send_api_group);
+        mSendApiGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                File fSendGroup = new File(Environment.getExternalStorageDirectory() + "/" + "Group");
+                File fileGroup[] = fSendGroup.listFiles();
+
+                if (!fSendGroup.exists()) {
+                    fSendGroup.mkdirs();
+                } else {
+                    String data = "";
+
+                    if (fileGroup.length != 0) {
+                        for (int i = 0; i< fileGroup.length;i++){
+
+
+                            String nameGroup = fileGroup[i].getName().replace("data","").replace("-","");
+
+                            mSend.write(String.valueOf(Integer.parseInt(nameGroup)+200));
+
+                            File fItem = new File(Environment.getExternalStorageDirectory() + "/" + "Group",fileGroup[i].getName());
+                            File fContent[] = fItem.listFiles();
+
+                            if (fContent.length!=0) {
+
+                                for (int ii = 0; ii < fContent.length;ii++) {
+                                    try {
+                                        FileInputStream is = new FileInputStream(new File(fItem+"/"+fContent[ii].getName()));
+                                        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                                        if (is != null) {
+                                            try {
+                                                String[] item = null;
+                                                while ((data = reader.readLine()) != null) {
+
+                                                    item = data.split("-");
+                                                    String nameLight = item[1];
+                                                    Log.d("groupItem",nameLight);
+                                                    mSend.write(String.valueOf(Integer.parseInt(nameLight) + 200));
+
+
+                                                }
+                                                is.close();
+                                            } catch (IOException e) {
+                                                // TODO Auto-generated catch block
+                                                e.printStackTrace();
+                                            }
+
+                                        }
+
+                                    } catch (FileNotFoundException e) {
+                                        Log.e("e", "File not found: " + e.toString());
+                                    }
+
+
+                                }
+                                mSend.write(String.valueOf("-1"));
+
+                            }
+
+                        }
+                    } else {
+
+                        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SettingGroupActivity.this);
+                        alertDialogBuilder.setMessage("Bạn chưa cài đặt nhóm");
+
+                        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                arg0.dismiss();
+                            }
+                        });
+
+                        AlertDialog alertDialog = alertDialogBuilder.create();
+                        alertDialog.show();
+
+                    }
+                }
+
+            }
+        });
+
 
         View footerView = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.footer_layout_list_group, null, false);
         mListGroup.addFooterView(footerView);
@@ -164,6 +273,34 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
 
         mGroupAdapter.setLight(groupsList);
         mListGroup.setAdapter(mGroupAdapter);
+
+
+        btAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        BluetoothDevice device = btAdapter.getRemoteDevice(address);
+
+        try {
+            btSocket = createBluetoothSocket(device);
+            btSocket.connect();
+        } catch (IOException e) {
+            Toast.makeText(getBaseContext(), "Socket creation failed", Toast.LENGTH_LONG).show();
+        }
+
+        mSend = new ConnectedThreadGroup(btSocket);
+        mSend.start();
+
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        try {
+            //Don't leave Bluetooth sockets open when leaving activity
+            btSocket.close();
+        } catch (IOException e2) {
+            //insert code to deal with this
+        }
     }
 
     public static boolean saveArray(Context context, List<Groups> groupses, String nameArray) {
@@ -258,6 +395,8 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
 
         intent.putExtra("id", value);
 
+        intent.putExtra("device_address",address);
+
         startActivity(intent);
     }
 
@@ -268,4 +407,54 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
 
         fileOrDirectory.delete();
     }
+
+    private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
+
+        return device.createRfcommSocketToServiceRecord(BTMODULEUUID);
+        //creates secure outgoing connecetion with BT device using UUID
+    }
+
+
+    //create new class for connect thread
+    public class ConnectedThreadGroup extends Thread {
+        private final InputStream mmInStream;
+        private final OutputStream mmOutStream;
+
+        //creation of the connect thread
+        public ConnectedThreadGroup(BluetoothSocket socket) {
+            InputStream tmpIn = null;
+            OutputStream tmpOut = null;
+
+            try {
+
+                //Create I/O streams for connection
+                tmpIn = socket.getInputStream();
+                tmpOut = socket.getOutputStream();
+            } catch (IOException e) {
+            }
+
+            mmInStream = tmpIn;
+            mmOutStream = tmpOut;
+        }
+
+
+        public void run() {
+
+
+            Log.d("ddddd", "Done");
+        }
+
+        //write method
+        public void write(String input) {
+            try {
+                mmOutStream.write(Integer.parseInt(input));                //write bytes over BT connection via outstream
+            } catch (IOException e) {
+                //if you cannot write, close the application
+                Toast.makeText(getBaseContext(), "Connection Failure", Toast.LENGTH_LONG).show();
+                finish();
+
+            }
+        }
+    }
+
 }

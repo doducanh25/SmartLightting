@@ -1,7 +1,12 @@
 package com.example.arduinosensors;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,14 +19,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by user on 22/07/2016.
@@ -33,6 +45,7 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
     ScriptAdapter mScriptAdapter;
 
     private ImageView mBack;
+    private ImageView mSendScript;
     private static List<Scripts> scriptsList;
     private String path;
     private PrintWriter pw;
@@ -48,6 +61,12 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
 
     private File[] file1;
 
+    private BluetoothAdapter btAdapter = null;
+    private BluetoothSocket btSocket = null;
+    private static final UUID BTMODULEUUID = UUID.fromString("04c6093b-0000-1000-8000-00805f9b34fb");
+    public static ConnectedThreadScript mSendDataScript;
+    private String address;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +74,7 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
         setContentView(R.layout.activity_setting_script);
 
         Intent intent = getIntent();
-        final String address = intent.getStringExtra("device_address");
+        address = intent.getStringExtra("device_address");
 
         mListScript = (ListView) findViewById(R.id.list_detail_script);
 
@@ -63,9 +82,108 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(SettingScriptActivity.this,SettingActivity.class);
-                intent1.putExtra("device_address",address);
+                Intent intent1 = new Intent(SettingScriptActivity.this, SettingActivity.class);
+                intent1.putExtra("device_address", address);
                 startActivity(intent1);
+            }
+        });
+
+        mSendScript = (ImageView) findViewById(R.id.send_api_script);
+        mSendScript.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int counter = 0;
+
+                while (counter < 2) {
+
+                    File fSendScript = new File(Environment.getExternalStorageDirectory() + "/" + "DucAnh");
+                    File fileScript[] = fSendScript.listFiles();
+
+                    if (!fSendScript.exists()) {
+                        fSendScript.mkdirs();
+                    } else {
+
+                        if (fileScript.length != 0) {
+                            for (int i = 0; i < fileScript.length; i++) {
+
+                                String nameScript = fileScript[i].getName();
+
+                                mSendDataScript.write(String.valueOf(Integer.parseInt(nameScript) - 1));
+
+                                File fItem = new File(Environment.getExternalStorageDirectory() + "/" + "DucAnh", fileScript[i].getName());
+                                File fContent[] = fItem.listFiles();
+
+                                if (fContent.length != 0) {
+
+                                    for (int ii = 0; ii < fContent.length; ii++) {
+
+                                        try {
+                                            FileInputStream is = new FileInputStream(new File(fItem + "/" + fContent[ii].getName()));
+                                            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                                            if (is != null) {
+                                                try {
+                                                    String[] item = null;
+                                                    String data = "";
+                                                    while ((data = reader.readLine()) != null) {
+
+                                                        item = data.split("-");
+                                                        String valueDimGroup = item[1];
+
+                                                        mSendDataScript.write(String.valueOf(Integer.parseInt(item[0]) - 1));
+
+                                                        if (Integer.parseInt(valueDimGroup) == 100) {
+
+                                                            mSendDataScript.write("99");
+
+                                                        } else {
+
+                                                            mSendDataScript.write(valueDimGroup);
+
+                                                        }
+
+                                                    }
+                                                    is.close();
+                                                } catch (IOException e) {
+                                                    // TODO Auto-generated catch block
+                                                    e.printStackTrace();
+                                                }
+
+                                            }
+
+                                        } catch (FileNotFoundException e) {
+                                            Log.e("e", "File not found: " + e.toString());
+                                        }
+
+                                    }
+                                    mSendDataScript.write(String.valueOf("-6"));
+
+                                } else {
+
+                                }
+
+                            }
+                        } else {
+
+                            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SettingScriptActivity.this);
+                            alertDialogBuilder.setMessage("Bạn chưa cài đặt kịch bản");
+
+                            alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface arg0, int arg1) {
+                                    arg0.dismiss();
+                                }
+                            });
+
+                            AlertDialog alertDialog = alertDialogBuilder.create();
+                            alertDialog.show();
+
+                        }
+
+                    }
+
+                    counter++;
+
+                }
             }
         });
 
@@ -160,6 +278,32 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
 
         mScriptAdapter.setScripts(scriptsList);
         mListScript.setAdapter(mScriptAdapter);
+
+        btAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        BluetoothDevice device = btAdapter.getRemoteDevice(address);
+
+        try {
+            btSocket = createBluetoothSocket(device);
+            btSocket.connect();
+        } catch (IOException e) {
+            Toast.makeText(getBaseContext(), "Socket creation failed", Toast.LENGTH_LONG).show();
+        }
+
+        mSendDataScript = new ConnectedThreadScript(btSocket);
+        mSendDataScript.start();
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        try {
+            //Don't leave Bluetooth sockets open when leaving activity
+            btSocket.close();
+        } catch (IOException e2) {
+            //insert code to deal with this
+        }
     }
 
 
@@ -192,7 +336,7 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
     }
 
     @Override
-    public void onClickDelete(int postion,String nameScript) {
+    public void onClickDelete(int postion, String nameScript) {
         scriptsList.remove(postion);
 
         mScriptAdapter.notifyDataSetChanged();
@@ -224,6 +368,7 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
         Intent intent = new Intent(this, DetailScriptActivity.class);
         String value = scriptsList.get(postion).getmNameScript();
         intent.putExtra("name_script", value);
+        intent.putExtra("device_address",address);
         startActivity(intent);
     }
 
@@ -234,4 +379,52 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
 
         fileOrDirectory.delete();
     }
+
+    private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
+
+        return device.createRfcommSocketToServiceRecord(BTMODULEUUID);
+        //creates secure outgoing connecetion with BT device using UUID
+    }
+
+    //create new class for connect thread
+    public class ConnectedThreadScript extends Thread {
+        private final InputStream mmInStream;
+        private final OutputStream mmOutStream;
+
+        //creation of the connect thread
+        public ConnectedThreadScript(BluetoothSocket socket) {
+            InputStream tmpIn = null;
+            OutputStream tmpOut = null;
+
+            try {
+                tmpIn = socket.getInputStream();
+                tmpOut = socket.getOutputStream();
+            } catch (IOException e) {
+
+            }
+
+            mmInStream = tmpIn;
+            mmOutStream = tmpOut;
+        }
+
+
+        public void run() {
+
+            Log.d("ddddd", "Done");
+        }
+
+        //write method
+        public void write(String input) {
+            try {
+                mmOutStream.write(Integer.parseInt(input));
+
+            } catch (IOException e) {
+                //if you cannot write, close the application
+                Toast.makeText(getBaseContext(), "Connection Failure", Toast.LENGTH_LONG).show();
+                finish();
+
+            }
+        }
+    }
+
 }

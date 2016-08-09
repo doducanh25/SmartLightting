@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ import java.util.List;
 public class DetailScriptActivity extends Activity {
 
     private ListView mListScriptDetail;
+    private Button mAccept;
 
     private DetailScriptAdapter mDetailScriptAdapter;
 
@@ -43,7 +46,7 @@ public class DetailScriptActivity extends Activity {
     private String nameScript;
     private String[] name = null;
     private static FileOutputStream outputStream;
-    private String sData ="";
+    private String address;
     private PrintWriter pw;
 
     @Override
@@ -54,9 +57,20 @@ public class DetailScriptActivity extends Activity {
 
         Intent intent = getIntent();
         name_script = intent.getStringExtra("name_script");
+        address = intent.getStringExtra("device_address");
 
         mListScriptDetail = (ListView) findViewById(R.id.list_detail_group_script);
         mDetailScriptAdapter = new DetailScriptAdapter(this);
+
+        mAccept = (Button) findViewById(R.id.accept_script);
+        mAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(DetailScriptActivity.this, SettingScriptActivity.class);
+                intent1.putExtra("device_address",address);
+                startActivity(intent1);
+            }
+        });
 
         path = Environment.getExternalStorageDirectory().toString() + "/DucAnh";
 

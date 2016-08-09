@@ -54,7 +54,7 @@ public class ScriptMainActivity extends Activity {
     private BluetoothSocket btSocket = null;
     private StringBuilder recDataString = new StringBuilder();
 
-    private ConnectedThread mConnectedThread;
+    public static ConnectedThread mConnectedThread;
 
     // SPP UUID service - this should work for most devices
     private static final UUID BTMODULEUUID = UUID.fromString("04c6093b-0000-1000-8000-00805f9b34fb");
@@ -146,7 +146,7 @@ public class ScriptMainActivity extends Activity {
         // Set up onClick listeners for buttons to send 1 or 0 to turn on/off LED
         btnLevelOne.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                mConnectedThread.write("0");    // Send "0" via Bluetooth
+                mConnectedThread.write("-2");    // Send "0" via Bluetooth
                 Toast.makeText(getBaseContext(), "Turn On Level One", Toast.LENGTH_SHORT).show();
                 btnLevelOne.setBackgroundResource(R.color.background_color_button_script_main_screen);
                 btnLevelThree.setBackgroundResource(R.color.background_button_script);
@@ -170,7 +170,7 @@ public class ScriptMainActivity extends Activity {
 
         btnLevelTwo.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                mConnectedThread.write("1");    // Send "1" via Bluetooth
+                mConnectedThread.write("-3");    // Send "1" via Bluetooth
                 Toast.makeText(getBaseContext(), "Turn On Level Two", Toast.LENGTH_SHORT).show();
                 btnLevelTwo.setBackgroundResource(R.color.background_color_button_script_main_screen);
                 btnLevelOne.setBackgroundResource(R.color.background_button_script);
@@ -194,7 +194,7 @@ public class ScriptMainActivity extends Activity {
         btnLevelThree.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mConnectedThread.write("2");
+                mConnectedThread.write("-4");
                 Toast.makeText(getBaseContext(), "Turn On Level Three", Toast.LENGTH_SHORT).show();
                 btnLevelThree.setBackgroundResource(R.color.background_color_button_script_main_screen);
                 btnLevelOne.setBackgroundResource(R.color.background_button_script);
@@ -217,7 +217,7 @@ public class ScriptMainActivity extends Activity {
         btnLevelFour.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mConnectedThread.write("3");
+                mConnectedThread.write("-5");
                 Toast.makeText(getBaseContext(), "Turn On Level Four", Toast.LENGTH_SHORT).show();
 
                 btnLevelFour.setBackgroundResource(R.color.background_color_button_script_main_screen);
@@ -325,19 +325,19 @@ public class ScriptMainActivity extends Activity {
 
                                             switch (dataScriptFile){
                                                 case script1:
-                                                    mConnectedThread.write("0");
+                                                    mConnectedThread.write("-2");
                                                     Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
                                                     break;
                                                 case script2:
-                                                    mConnectedThread.write("1");
+                                                    mConnectedThread.write("-3");
                                                     Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
                                                     break;
                                                 case script3:
-                                                    mConnectedThread.write("2");
+                                                    mConnectedThread.write("-4");
                                                     Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
                                                     break;
                                                 default :
-                                                    mConnectedThread.write("3");
+                                                    mConnectedThread.write("-5");
                                                     Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
                                                     break;
                                             }
@@ -606,9 +606,24 @@ public class ScriptMainActivity extends Activity {
                         try {
                             while ((dataScript = reader.readLine()) != null) {
 
-                                Log.d("send",dataScript);
+                                switch (dataScript){
+                                    case script1:
+                                        mConnectedThread.write("-2");
 
-                                mConnectedThread.write(dataScript);
+                                        break;
+                                    case script2:
+                                        mConnectedThread.write("-3");
+
+                                        break;
+                                    case script3:
+                                        mConnectedThread.write("-4");
+
+                                        break;
+                                    default :
+                                        mConnectedThread.write("-5");
+
+                                        break;
+                                }
 //
                                 if (dataScript.contains("0")) {
 
@@ -685,7 +700,7 @@ public class ScriptMainActivity extends Activity {
 
 
     //create new class for connect thread
-    private class ConnectedThread extends Thread {
+    public class ConnectedThread extends Thread {
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
 

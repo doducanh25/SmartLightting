@@ -30,6 +30,7 @@
     <color name="background_color_button_script_main_screen">#FF0000</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
+    <color name="background_item_group">#FF3333</color>
     <color name="background_layout_relative_script_main_screen">#000000</color>
     <color name="background_list_view_list_device">#EEEEEE</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -237,18 +238,23 @@
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
+    <dimen name="icon_back_size">35dp</dimen>
     <dimen name="icon_light_list_group_light_size">50dp</dimen>
     <dimen name="icon_notification_dialog_login_screen_size">60dp</dimen>
     <dimen name="image_detele_light_detail_group_size">60dp</dimen>
+    <dimen name="image_logo_size_setting_group">40dp</dimen>
     <dimen name="image_logout_size">30dp</dimen>
     <dimen name="image_next_setting_screen_height">50dp</dimen>
     <dimen name="image_next_setting_screen_width">30dp</dimen>
+    <dimen name="input_password_height">60dp</dimen>
     <dimen name="layout_bar_title">60dp</dimen>
+    <dimen name="margin_left_icon">30dp</dimen>
     <dimen name="mr_media_route_controller_art_max_height">320dp</dimen>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
     <dimen name="text_size">15dp</dimen>
+    <dimen name="text_size_title">25sp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -332,11 +338,15 @@
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
     <string name="decline">Decline</string>
+    <string name="detail_group_title">Chi tiết nhóm</string>
+    <string name="detail_script_title">Chi tiết kịch bản</string>
     <string name="follow_setting_screen">Theo dõi</string>
     <string name="hello_world">Hello world!</string>
     <string name="input_pass_login">Nhập mật khẩu</string>
     <string name="join_now">Tham Gia Ngay</string>
+    <string name="list_lights_title">Danh sách đèn</string>
     <string name="login">Login</string>
+    <string name="login_title">Đăng nhập</string>
     <string name="mr_media_route_button_content_description">Cast</string>
     <string name="mr_media_route_chooser_searching">Searching for devices\u2026</string>
     <string name="mr_media_route_chooser_title">Connect to device</string>
@@ -356,6 +366,7 @@
     <string name="select_device_pair">Select btSerial device from paired devices:</string>
     <string name="setting_group_setting_screen">Cài đặt nhóm</string>
     <string name="setting_script_setting_screen">Cài đặt kịch bản</string>
+    <string name="setting_title">Cài Đặt Hệ Thống</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>

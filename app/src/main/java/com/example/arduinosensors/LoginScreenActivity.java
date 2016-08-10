@@ -89,6 +89,10 @@ public class LoginScreenActivity extends Activity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public static void hideSoftKeyboard(Activity activity) {
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         if (activity.getCurrentFocus() != null) {

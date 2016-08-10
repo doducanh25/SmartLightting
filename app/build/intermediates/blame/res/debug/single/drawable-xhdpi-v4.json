@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\button_round_gray.xml",
+        "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\drawable-xhdpi\\button_round_gray.xml"
+    },
+    {
         "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
         "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xhdpi\\abc_btn_check_to_on_mtrl_015.png"
     },

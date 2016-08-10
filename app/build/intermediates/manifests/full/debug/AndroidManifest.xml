@@ -82,6 +82,11 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
+        <activity
+            android:name="com.example.arduinosensors.FollowLightsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
 
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity

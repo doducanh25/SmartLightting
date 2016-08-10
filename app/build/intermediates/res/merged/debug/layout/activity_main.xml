@@ -12,20 +12,21 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/button_script_main_height"
+            android:layout_height="@dimen/button_script_main_height"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:background="@drawable/icon"
-            android:layout_gravity="center"/>
+            android:background="@drawable/icon" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/title_app"
+            android:text="@string/control_script_title"
             android:textColor="@color/text_color"
-            android:textSize="20dp"
-            android:textStyle="italic" />
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="italic"
+            android:layout_margin="@dimen/default_margin"/>
 
     </LinearLayout>
 
@@ -49,35 +50,34 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="15dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/button_accept_pass_login_screen_margin_top"
                 android:background="@color/background_bar"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btnLevelOne"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/button_script_height"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button_round_gray"
                     android:text="@string/script_1"
-                    android:textColor="@color/text_color_button"
-                    android:textSize="@dimen/text_size"
-                    android:background="@color/background_button_script"/>
+                    android:textColor="@color/text_while"
+                    android:textSize="@dimen/text_size" />
 
                 <Button
                     android:id="@+id/btnLevelTwo"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/button_script_height"
                     android:layout_alignBottom="@+id/buttonOn"
                     android:layout_alignParentRight="true"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button_round_gray"
                     android:text="@string/script_2"
-                    android:textColor="@color/text_color_button"
-                    android:background="@color/background_button_script"/>
+                    android:textColor="@color/text_while" />
             </LinearLayout>
 
             <LinearLayout
@@ -90,22 +90,22 @@
                 <Button
                     android:id="@+id/btnLevelThree"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/button_script_height"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button_round_gray"
                     android:text="@string/script_3"
-                    android:textColor="@color/text_color_button"
-                    android:background="@color/background_button_script"/>
+                    android:textColor="@color/text_while" />
 
                 <Button
                     android:id="@+id/btnLevelFour"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="@dimen/button_script_height"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button_round_gray"
                     android:text="@string/script_4"
-                    android:textColor="@color/text_color_button"
-                    android:background="@color/background_button_script"/>
+                    android:textColor="@color/text_while" />
 
             </LinearLayout>
 
@@ -113,10 +113,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/button_accept_pass_login_screen_margin_top"
                 android:text="@string/title_dim_script"
                 android:textColor="@color/text_color"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

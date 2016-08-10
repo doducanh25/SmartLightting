@@ -8,6 +8,7 @@
     <dimen name="button_script_main_size">30dp</dimen>
     <dimen name="button_script_main_height">50dp</dimen>
     <dimen name="button_script_main_width">150dp</dimen>
+    <dimen name="button_script_height">100dp</dimen>
     <dimen name="layout_bar_title">60dp</dimen>
     <dimen name="icon_notification_dialog_login_screen_size">60dp</dimen>
     <dimen name="button_ok_dialog_login_screen_width">100dp</dimen>

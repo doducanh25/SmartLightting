@@ -427,4 +427,8 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
         }
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
 }

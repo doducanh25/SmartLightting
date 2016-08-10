@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import java.util.Set;
+
 /**
  * Created by user on 19/07/2016.
  */
@@ -62,6 +64,10 @@ public class SettingActivity extends Activity {
         mLayoutFollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(SettingActivity.this,FollowLightsActivity.class);
+                intent.putExtra("device_address",address);
+                startActivity(intent);
 
             }
         });

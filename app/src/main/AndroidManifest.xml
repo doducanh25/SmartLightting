@@ -85,6 +85,13 @@
 
         </activity>
 
+        <activity
+            android:name=".FollowLightsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
+        </activity>
+
     </application>
 
 </manifest>

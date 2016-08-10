@@ -457,4 +457,8 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
         }
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
 }

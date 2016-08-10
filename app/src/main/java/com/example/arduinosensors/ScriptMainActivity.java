@@ -38,7 +38,6 @@ public class ScriptMainActivity extends Activity {
     Button btnLevelOne, btnLevelTwo;
     Button btnLevelThree;
     Button btnLevelFour;
-    Handler bluetoothIn;
 
     private ImageView mTurnDimScrip;
     SeekBar mSeekBar;
@@ -52,7 +51,6 @@ public class ScriptMainActivity extends Activity {
     final int handlerState = 0;                         //used to identify handler message
     private BluetoothAdapter btAdapter = null;
     private BluetoothSocket btSocket = null;
-    private StringBuilder recDataString = new StringBuilder();
 
     public static ConnectedThread mConnectedThread;
 
@@ -148,10 +146,10 @@ public class ScriptMainActivity extends Activity {
             public void onClick(View v) {
                 mConnectedThread.write("-2");    // Send "0" via Bluetooth
                 Toast.makeText(getBaseContext(), "Turn On Level One", Toast.LENGTH_SHORT).show();
-                btnLevelOne.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                btnLevelThree.setBackgroundResource(R.color.background_button_script);
-                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                btnLevelOne.setBackgroundResource(R.drawable.button_round);
+                btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
 
                 try {
@@ -172,10 +170,10 @@ public class ScriptMainActivity extends Activity {
             public void onClick(View v) {
                 mConnectedThread.write("-3");    // Send "1" via Bluetooth
                 Toast.makeText(getBaseContext(), "Turn On Level Two", Toast.LENGTH_SHORT).show();
-                btnLevelTwo.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                btnLevelThree.setBackgroundResource(R.color.background_button_script);
-                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                btnLevelTwo.setBackgroundResource(R.drawable.button_round);
+                btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                 try {
                     outputStream = new FileOutputStream(fileData);
@@ -196,10 +194,10 @@ public class ScriptMainActivity extends Activity {
             public void onClick(View v) {
                 mConnectedThread.write("-4");
                 Toast.makeText(getBaseContext(), "Turn On Level Three", Toast.LENGTH_SHORT).show();
-                btnLevelThree.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                btnLevelThree.setBackgroundResource(R.drawable.button_round);
+                btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                 try {
                     outputStream = new FileOutputStream(fileData);
@@ -220,10 +218,10 @@ public class ScriptMainActivity extends Activity {
                 mConnectedThread.write("-5");
                 Toast.makeText(getBaseContext(), "Turn On Level Four", Toast.LENGTH_SHORT).show();
 
-                btnLevelFour.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                btnLevelThree.setBackgroundResource(R.color.background_button_script);
-                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                btnLevelOne.setBackgroundResource(R.color.background_button_script);
+                btnLevelFour.setBackgroundResource(R.drawable.button_round);
+                btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
 
                 try {
                     outputStream = new FileOutputStream(fileData);
@@ -344,31 +342,31 @@ public class ScriptMainActivity extends Activity {
 //
                                             if (dataScriptFile.contains("0")) {
 
-                                                btnLevelOne.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelThree.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelOne.setBackgroundResource(R.drawable.button_round);
+                                                btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                                             } else if (dataScriptFile.contains("1")) {
 
-                                                btnLevelTwo.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                                btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelThree.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelTwo.setBackgroundResource(R.drawable.button_round);
+                                                btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                                             } else if (dataScriptFile.contains("2")) {
 
-                                                btnLevelThree.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                                btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelThree.setBackgroundResource(R.drawable.button_round);
+                                                btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                                             } else if (dataScriptFile.contains("3")) {
 
-                                                btnLevelFour.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                                btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                                                btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                                                btnLevelFour.setBackgroundResource(R.drawable.button_round);
+                                                btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                                                btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
 
                                             }
 
@@ -627,31 +625,31 @@ public class ScriptMainActivity extends Activity {
 //
                                 if (dataScript.contains("0")) {
 
-                                    btnLevelOne.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                    btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelThree.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelOne.setBackgroundResource(R.drawable.button_round);
+                                    btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                                 } else if (dataScript.contains("1")) {
 
-                                    btnLevelTwo.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                    btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelThree.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelTwo.setBackgroundResource(R.drawable.button_round);
+                                    btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                                 } else if (dataScript.contains("2")) {
 
-                                    btnLevelThree.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                    btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelFour.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelThree.setBackgroundResource(R.drawable.button_round);
+                                    btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelFour.setBackgroundResource(R.drawable.button_round_gray);
 
                                 } else if (dataScript.contains("3")) {
 
-                                    btnLevelFour.setBackgroundResource(R.color.background_color_button_script_main_screen);
-                                    btnLevelOne.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelTwo.setBackgroundResource(R.color.background_button_script);
-                                    btnLevelThree.setBackgroundResource(R.color.background_button_script);
+                                    btnLevelFour.setBackgroundResource(R.drawable.button_round);
+                                    btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
+                                    btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
 
                                 }
 
@@ -696,6 +694,10 @@ public class ScriptMainActivity extends Activity {
                 startActivityForResult(enableBtIntent, 1);
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
 

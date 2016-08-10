@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_bar">
+
+    <LinearLayout
+        android:id="@+id/layout_bar_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_bar_title"
+        android:alpha="1"
+        android:background="@color/background_bar"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/image_logout_size"
+            android:layout_height="@dimen/image_logout_size"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_back"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/icon_light_list_group_light_size"
+            android:layout_height="@dimen/icon_light_list_group_light_size"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/icon"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/follow_lights_title"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"/>
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="@dimen/image_logout_size"
+            android:layout_height="@dimen/image_logout_size"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_logout"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/background_view_bar"
+        android:layout_below="@+id/layout_bar_title"/>
+
+    <GridView
+        android:id="@+id/gv_list_lights"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="4"
+        android:columnWidth="90dp"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center">
+    </GridView>
+
+
+
+</LinearLayout>

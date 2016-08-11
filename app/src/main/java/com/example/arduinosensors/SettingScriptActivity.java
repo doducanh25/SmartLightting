@@ -2,6 +2,7 @@ package com.example.arduinosensors;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -162,6 +164,24 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
                                 }
 
                             }
+
+                            final ProgressDialog dialog = new ProgressDialog(SettingScriptActivity.this);
+
+                            // make the progress bar cancelable
+                            dialog.setCancelable(true);
+
+                            // set a message text
+                            dialog.setMessage("Sending...");
+
+                            // show it
+                            dialog.show();
+
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                public void run() {
+                                    dialog.dismiss();
+                                }
+                            }, 2000);
                         } else {
 
                             final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SettingScriptActivity.this);
@@ -184,6 +204,9 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
                     counter++;
 
                 }
+
+
+
             }
         });
 

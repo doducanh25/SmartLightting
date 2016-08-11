@@ -55,6 +55,7 @@ public class SettingActivity extends Activity {
 
                 Intent intent = new Intent(SettingActivity.this,ScriptMainActivity.class);
                 intent.putExtra("device_address",address);
+                intent.putExtra("code","1234");
                 startActivity(intent);
 
             }

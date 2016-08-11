@@ -60,6 +60,8 @@ public class ScriptMainActivity extends Activity {
     // String for MAC address
     private static String address;
 
+    private static String code;
+
     private boolean isChoose = false;
 
     private static FileOutputStream outputStreamDim;
@@ -572,6 +574,15 @@ public class ScriptMainActivity extends Activity {
 
         //Get the MAC address from the DeviceListActivty via EXTRA
         address = intent.getStringExtra(DeviceListActivity.EXTRA_DEVICE_ADDRESS);
+
+//        // get code
+         code = intent.getStringExtra("code");
+
+        if (!code.isEmpty() && code.contains("1234")) {
+            mLogin.setVisibility(View.INVISIBLE);
+        } else {
+            mLogin.setVisibility(View.VISIBLE);
+        }
 
         //create device and set the MAC address
         BluetoothDevice device = btAdapter.getRemoteDevice(address);

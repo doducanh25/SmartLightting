@@ -4,27 +4,27 @@
     api-level="22"
     density="hdpi"
     format="7"
-    timestamp="32986205427181"
+    timestamp="23594469285652"
     token="-1544704896795993567" >
 
     <task
         name="javac"
-        duration="822" />
+        duration="554" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="207" />
+        duration="368" />
     <task
         name="verifier"
-        duration="214" />
+        duration="245" />
 
     <artifact
         location="E:\DATA\SmartLightting\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="32986205427181" >
+    <build timestamp="23594469285652" >
         <artifact
             location="E:\DATA\SmartLightting\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

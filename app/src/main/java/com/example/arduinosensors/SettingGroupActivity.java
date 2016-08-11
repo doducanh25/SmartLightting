@@ -2,6 +2,7 @@ package com.example.arduinosensors;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -156,6 +158,25 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
                             }
 
                         }
+
+                        final ProgressDialog dialog = new ProgressDialog(SettingGroupActivity.this);
+
+                        // make the progress bar cancelable
+                        dialog.setCancelable(true);
+
+                        // set a message text
+                        dialog.setMessage("Sending...");
+
+                        // show it
+                        dialog.show();
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                dialog.dismiss();
+                            }
+                        }, 2000);
+
                     } else {
 
                         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SettingGroupActivity.this);

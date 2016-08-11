@@ -88,16 +88,16 @@
         "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting_script.xml",
-        "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\layout\\activity_setting_script.xml"
+        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_follow_lights.xml",
+        "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\layout\\activity_follow_lights.xml"
     },
     {
         "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_follow_lights.xml",
-        "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\layout\\activity_follow_lights.xml"
+        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting_script.xml",
+        "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\layout\\activity_setting_script.xml"
     },
     {
         "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\footer_layout_list_group.xml",
@@ -108,16 +108,16 @@
         "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
+        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
         "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\footer_layout_list_detail_group_light.xml",

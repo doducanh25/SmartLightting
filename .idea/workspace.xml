@@ -29,15 +29,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FollowLightsActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/FollowLightsActivity.java">
+      <file leaf-file-name="DeviceListActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/DeviceListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84855235">
-              <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="116" column="39" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingScriptActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingScriptActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3108108">
+              <caret line="170" column="55" selection-start-line="170" selection-start-column="55" selection-end-line="170" selection-end-column="55" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2471#2781#0" expanded="true" />
-                <element signature="e#2780#2781#0" expanded="true" />
+                <element signature="e#2947#7929#0" expanded="true" />
+                <element signature="e#6867#7053#0" expanded="true" />
+                <element signature="e#7052#7053#0" expanded="true" />
+                <element signature="e#7928#7929#0" expanded="true" />
+                <element signature="method#saveArray#0;class#SettingScriptActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingGroupActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingGroupActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="177" column="24" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
+              <folding>
+                <element signature="e#3064#7238#0" expanded="true" />
+                <element signature="e#6302#6472#0" expanded="true" />
+                <element signature="e#7237#7238#0" expanded="true" />
+                <element signature="method#loadArray#0;class#SettingGroupActivity#0" expanded="false" />
+                <element signature="method#onClickDelete#0;class#SettingGroupActivity#0" expanded="false" />
+                <element signature="method#deleteRecursive#0;class#SettingGroupActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2009,13 +2038,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_group_light.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/DetailGroupLightActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/DetailGroupLightAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_list_light.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setting_group.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_setting_script.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_script.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ListGroupLightActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/device_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/DeviceListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/button_round_gray" />
@@ -2025,13 +2052,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_status_light.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/StatusLightsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_follow_lights.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/LoginScreenActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/FollowLightsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingScriptActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingGroupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_list_light.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ScriptMainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/DeviceListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingGroupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingScriptActivity.java" />
       </list>
     </option>
   </component>
@@ -2066,8 +2095,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2078,24 +2107,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmartLightting" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2140,24 +2151,6 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmartLightting" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
@@ -2175,15 +2168,11 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2485,7 +2474,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18739353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32197616" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2723824" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2541,10 +2530,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="76" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
-          <folding>
-            <element signature="e#2243#2552#0" expanded="true" />
-            <element signature="e#2551#2552#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2562,22 +2548,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="659" column="4" selection-start-line="659" selection-start-column="4" selection-end-line="668" selection-end-column="5" />
-          <folding>
-            <element signature="e#3001#3204#0" expanded="false" />
-            <element signature="e#3203#3204#0" expanded="false" />
-            <element signature="e#4735#5693#0" expanded="false" />
-            <element signature="e#5692#5693#0" expanded="false" />
-            <element signature="e#5736#6693#0" expanded="false" />
-            <element signature="e#6692#6693#0" expanded="false" />
-            <element signature="e#6738#7689#0" expanded="false" />
-            <element signature="e#7688#7689#0" expanded="false" />
-            <element signature="e#7733#8684#0" expanded="false" />
-            <element signature="e#8683#8684#0" expanded="false" />
-            <element signature="e#8729#17177#0" expanded="false" />
-            <element signature="e#17176#17177#0" expanded="false" />
-            <element signature="e#22380#22679#0" expanded="false" />
-            <element signature="e#22678#22679#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2585,22 +2556,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3001#3204#0" expanded="false" />
-            <element signature="e#3203#3204#0" expanded="false" />
-            <element signature="e#4735#5693#0" expanded="false" />
-            <element signature="e#5692#5693#0" expanded="false" />
-            <element signature="e#5736#6693#0" expanded="false" />
-            <element signature="e#6692#6693#0" expanded="false" />
-            <element signature="e#6738#7689#0" expanded="false" />
-            <element signature="e#7688#7689#0" expanded="false" />
-            <element signature="e#7733#8684#0" expanded="false" />
-            <element signature="e#8683#8684#0" expanded="false" />
-            <element signature="e#8729#17177#0" expanded="false" />
-            <element signature="e#17176#17177#0" expanded="false" />
-            <element signature="e#22380#22679#0" expanded="false" />
-            <element signature="e#22678#22679#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2679,27 +2635,27 @@
         <state vertical-scroll-proportion="-2.4727273">
           <caret line="23" column="66" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="66" />
           <folding>
-            <element signature="e#404#429#0" expanded="true" />
-            <element signature="e#624#647#0" expanded="true" />
-            <element signature="e#682#705#0" expanded="true" />
-            <element signature="e#962#996#0" expanded="true" />
-            <element signature="e#1127#1150#0" expanded="true" />
-            <element signature="e#1427#1448#0" expanded="true" />
-            <element signature="e#1923#1953#0" expanded="true" />
-            <element signature="e#2164#2190#0" expanded="true" />
-            <element signature="e#2280#2298#0" expanded="true" />
-            <element signature="e#2436#2483#0" expanded="true" />
-            <element signature="e#2517#2568#0" expanded="true" />
-            <element signature="e#2604#2657#0" expanded="true" />
-            <element signature="e#2692#2745#0" expanded="true" />
-            <element signature="e#2819#2851#0" expanded="true" />
-            <element signature="e#2996#3030#0" expanded="true" />
-            <element signature="e#3201#3235#0" expanded="true" />
-            <element signature="e#3266#3300#0" expanded="true" />
-            <element signature="e#3375#3409#0" expanded="true" />
-            <element signature="e#3587#3607#0" expanded="true" />
-            <element signature="e#3746#3769#0" expanded="true" />
-            <element signature="e#3856#3874#0" expanded="true" />
+            <element signature="e#404#429#0" expanded="false" />
+            <element signature="e#624#647#0" expanded="false" />
+            <element signature="e#682#705#0" expanded="false" />
+            <element signature="e#962#996#0" expanded="false" />
+            <element signature="e#1127#1150#0" expanded="false" />
+            <element signature="e#1427#1448#0" expanded="false" />
+            <element signature="e#1923#1953#0" expanded="false" />
+            <element signature="e#2164#2190#0" expanded="false" />
+            <element signature="e#2280#2298#0" expanded="false" />
+            <element signature="e#2436#2483#0" expanded="false" />
+            <element signature="e#2517#2568#0" expanded="false" />
+            <element signature="e#2604#2657#0" expanded="false" />
+            <element signature="e#2692#2745#0" expanded="false" />
+            <element signature="e#2819#2851#0" expanded="false" />
+            <element signature="e#2996#3030#0" expanded="false" />
+            <element signature="e#3201#3235#0" expanded="false" />
+            <element signature="e#3266#3300#0" expanded="false" />
+            <element signature="e#3375#3409#0" expanded="false" />
+            <element signature="e#3587#3607#0" expanded="false" />
+            <element signature="e#3746#3769#0" expanded="false" />
+            <element signature="e#3856#3874#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2717,10 +2673,10 @@
         <state vertical-scroll-proportion="-4.2727275">
           <caret line="114" column="39" selection-start-line="114" selection-start-column="39" selection-end-line="114" selection-end-column="39" />
           <folding>
-            <element signature="e#541#575#0" expanded="true" />
-            <element signature="e#610#644#0" expanded="true" />
-            <element signature="e#1104#1127#0" expanded="true" />
-            <element signature="e#1291#1314#0" expanded="true" />
+            <element signature="e#541#575#0" expanded="false" />
+            <element signature="e#610#644#0" expanded="false" />
+            <element signature="e#1104#1127#0" expanded="false" />
+            <element signature="e#1291#1314#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2729,7 +2685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52422905">
           <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2752,66 +2707,9 @@
         <state vertical-scroll-proportion="-2.418182">
           <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
           <folding>
-            <element signature="e#1273#1311#0" expanded="true" />
-            <element signature="e#1350#1388#0" expanded="true" />
-            <element signature="e#1883#1907#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ListGroupLightActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.762115">
-          <caret line="257" column="64" selection-start-line="257" selection-start-column="64" selection-end-line="257" selection-end-column="64" />
-          <folding>
-            <element signature="e#12924#14168#0" expanded="false" />
-            <element signature="e#14167#14168#0" expanded="false" />
-            <element signature="e#24466#25721#0" expanded="false" />
-            <element signature="e#25720#25721#0" expanded="false" />
-            <element signature="e#25761#27016#0" expanded="false" />
-            <element signature="e#27015#27016#0" expanded="false" />
-            <element signature="e#27056#28311#0" expanded="false" />
-            <element signature="e#28310#28311#0" expanded="false" />
-            <element signature="e#28351#29606#0" expanded="false" />
-            <element signature="e#29605#29606#0" expanded="false" />
-            <element signature="e#29646#30901#0" expanded="false" />
-            <element signature="e#30900#30901#0" expanded="false" />
-            <element signature="e#30941#32196#0" expanded="false" />
-            <element signature="e#32195#32196#0" expanded="false" />
-            <element signature="e#32236#33491#0" expanded="false" />
-            <element signature="e#33490#33491#0" expanded="false" />
-            <element signature="e#33531#34786#0" expanded="false" />
-            <element signature="e#34785#34786#0" expanded="false" />
-            <element signature="e#34827#36082#0" expanded="false" />
-            <element signature="e#36081#36082#0" expanded="false" />
-            <element signature="e#36123#37378#0" expanded="false" />
-            <element signature="e#37377#37378#0" expanded="false" />
-            <element signature="e#37418#38673#0" expanded="false" />
-            <element signature="e#38672#38673#0" expanded="false" />
-            <element signature="e#38713#39968#0" expanded="false" />
-            <element signature="e#39967#39968#0" expanded="false" />
-            <element signature="e#40008#41263#0" expanded="false" />
-            <element signature="e#41262#41263#0" expanded="false" />
-            <element signature="e#41303#42558#0" expanded="false" />
-            <element signature="e#42557#42558#0" expanded="false" />
-            <element signature="e#42598#43853#0" expanded="false" />
-            <element signature="e#43852#43853#0" expanded="false" />
-            <element signature="e#43893#45148#0" expanded="false" />
-            <element signature="e#45147#45148#0" expanded="false" />
-            <element signature="e#45188#46443#0" expanded="false" />
-            <element signature="e#46442#46443#0" expanded="false" />
-            <element signature="e#46483#47738#0" expanded="false" />
-            <element signature="e#47737#47738#0" expanded="false" />
-            <element signature="e#47778#49033#0" expanded="false" />
-            <element signature="e#49032#49033#0" expanded="false" />
-            <element signature="e#49073#50328#0" expanded="false" />
-            <element signature="e#50327#50328#0" expanded="false" />
-            <element signature="e#50368#51623#0" expanded="false" />
-            <element signature="e#51622#51623#0" expanded="false" />
-            <element signature="e#51663#52918#0" expanded="false" />
-            <element signature="e#52917#52918#0" expanded="false" />
-            <element signature="e#52958#54213#0" expanded="false" />
-            <element signature="e#54212#54213#0" expanded="false" />
+            <element signature="e#1273#1311#0" expanded="false" />
+            <element signature="e#1350#1388#0" expanded="false" />
+            <element signature="e#1883#1907#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2840,9 +2738,9 @@
         <state vertical-scroll-proportion="-1.5454545">
           <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
           <folding>
-            <element signature="e#1448#1476#0" expanded="true" />
-            <element signature="e#2455#2481#0" expanded="true" />
-            <element signature="e#2574#2592#0" expanded="true" />
+            <element signature="e#1448#1476#0" expanded="false" />
+            <element signature="e#2455#2481#0" expanded="false" />
+            <element signature="e#2574#2592#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2887,28 +2785,17 @@
         <state vertical-scroll-proportion="-3.9636364">
           <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
           <folding>
-            <element signature="e#553#587#0" expanded="true" />
-            <element signature="e#622#656#0" expanded="true" />
-            <element signature="e#977#1007#0" expanded="true" />
-            <element signature="e#1087#1111#0" expanded="true" />
-            <element signature="e#1185#1208#0" expanded="true" />
-            <element signature="e#1984#2035#0" expanded="true" />
-            <element signature="e#2318#2347#0" expanded="true" />
-            <element signature="e#2969#2998#0" expanded="true" />
-            <element signature="e#3896#3925#0" expanded="true" />
-            <element signature="e#4377#4406#0" expanded="true" />
-            <element signature="e#4930#4981#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/DeviceListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="78" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
-          <folding>
-            <element signature="e#3537#4403#0" expanded="false" />
-            <element signature="e#4402#4403#0" expanded="false" />
+            <element signature="e#553#587#0" expanded="false" />
+            <element signature="e#622#656#0" expanded="false" />
+            <element signature="e#977#1007#0" expanded="false" />
+            <element signature="e#1087#1111#0" expanded="false" />
+            <element signature="e#1185#1208#0" expanded="false" />
+            <element signature="e#1984#2035#0" expanded="false" />
+            <element signature="e#2318#2347#0" expanded="false" />
+            <element signature="e#2969#2998#0" expanded="false" />
+            <element signature="e#3896#3925#0" expanded="false" />
+            <element signature="e#4377#4406#0" expanded="false" />
+            <element signature="e#4930#4981#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2939,31 +2826,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_list_light.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5839599">
-          <caret line="145" column="57" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/Status.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="33" />
-          <folding>
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2990,13 +2856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="56" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#923#924#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#1017#1018#0" expanded="false" />
-            <element signature="e#1061#1062#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3048,17 +2907,9 @@
         <state vertical-scroll-proportion="-4.3818183">
           <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
           <folding>
-            <element signature="e#690#716#0" expanded="true" />
-            <element signature="e#1631#1655#0" expanded="true" />
+            <element signature="e#690#716#0" expanded="false" />
+            <element signature="e#1631#1655#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="47" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3066,27 +2917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="93" column="5" selection-start-line="91" selection-start-column="4" selection-end-line="93" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingGroupActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="461" column="5" selection-start-line="461" selection-start-column="5" selection-end-line="461" selection-end-column="5" />
-          <folding>
-            <element signature="method#loadArray#0;class#SettingGroupActivity#0" expanded="false" />
-            <element signature="method#onClickDelete#0;class#SettingGroupActivity#0" expanded="false" />
-            <element signature="method#deleteRecursive#0;class#SettingGroupActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ScriptMainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="700" column="5" selection-start-line="700" selection-start-column="5" selection-end-line="700" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3105,17 +2935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4008908">
           <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingScriptActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6971047">
-          <caret line="431" column="5" selection-start-line="431" selection-start-column="5" selection-end-line="431" selection-end-column="5" />
-          <folding>
-            <element signature="method#saveArray#0;class#SettingScriptActivity#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3123,10 +2942,189 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.84855235">
           <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_list_light.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.035532996">
+          <caret line="1090" column="25" selection-start-line="1090" selection-start-column="25" selection-end-line="1090" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2471#2781#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#369#394#0" expanded="true" />
+            <element signature="e#602#628#0" expanded="true" />
+            <element signature="e#663#689#0" expanded="true" />
+            <element signature="e#915#956#0" expanded="true" />
+            <element signature="e#991#1032#0" expanded="true" />
+            <element signature="e#1354#1381#0" expanded="true" />
+            <element signature="e#1461#1485#0" expanded="true" />
+            <element signature="e#1563#1586#0" expanded="true" />
+            <element signature="e#1679#1705#0" expanded="true" />
+            <element signature="e#1740#1766#0" expanded="true" />
+            <element signature="e#3068#3109#0" expanded="true" />
+            <element signature="e#3156#3197#0" expanded="true" />
+            <element signature="e#3689#3707#0" expanded="true" />
+            <element signature="e#4553#4594#0" expanded="true" />
+            <element signature="e#4641#4682#0" expanded="true" />
+            <element signature="e#5174#5192#0" expanded="true" />
+            <element signature="e#6038#6079#0" expanded="true" />
+            <element signature="e#6126#6167#0" expanded="true" />
+            <element signature="e#6659#6677#0" expanded="true" />
+            <element signature="e#7523#7564#0" expanded="true" />
+            <element signature="e#7611#7652#0" expanded="true" />
+            <element signature="e#8144#8162#0" expanded="true" />
+            <element signature="e#9306#9347#0" expanded="true" />
+            <element signature="e#9394#9435#0" expanded="true" />
+            <element signature="e#9927#9945#0" expanded="true" />
+            <element signature="e#10791#10832#0" expanded="true" />
+            <element signature="e#10879#10920#0" expanded="true" />
+            <element signature="e#11412#11430#0" expanded="true" />
+            <element signature="e#12276#12317#0" expanded="true" />
+            <element signature="e#12364#12405#0" expanded="true" />
+            <element signature="e#12897#12915#0" expanded="true" />
+            <element signature="e#13761#13802#0" expanded="true" />
+            <element signature="e#13849#13890#0" expanded="true" />
+            <element signature="e#14382#14400#0" expanded="true" />
+            <element signature="e#15544#15585#0" expanded="true" />
+            <element signature="e#15632#15673#0" expanded="true" />
+            <element signature="e#16165#16183#0" expanded="true" />
+            <element signature="e#17031#17072#0" expanded="true" />
+            <element signature="e#17119#17160#0" expanded="true" />
+            <element signature="e#17655#17673#0" expanded="true" />
+            <element signature="e#18524#18565#0" expanded="true" />
+            <element signature="e#18612#18653#0" expanded="true" />
+            <element signature="e#19148#19166#0" expanded="true" />
+            <element signature="e#20017#20058#0" expanded="true" />
+            <element signature="e#20105#20146#0" expanded="true" />
+            <element signature="e#20641#20659#0" expanded="true" />
+            <element signature="e#21808#21849#0" expanded="true" />
+            <element signature="e#21896#21937#0" expanded="true" />
+            <element signature="e#22432#22450#0" expanded="true" />
+            <element signature="e#23301#23342#0" expanded="true" />
+            <element signature="e#23389#23430#0" expanded="true" />
+            <element signature="e#23925#23943#0" expanded="true" />
+            <element signature="e#24794#24835#0" expanded="true" />
+            <element signature="e#24882#24923#0" expanded="true" />
+            <element signature="e#25418#25436#0" expanded="true" />
+            <element signature="e#26287#26328#0" expanded="true" />
+            <element signature="e#26375#26416#0" expanded="true" />
+            <element signature="e#26911#26929#0" expanded="true" />
+            <element signature="e#28078#28119#0" expanded="true" />
+            <element signature="e#28166#28207#0" expanded="true" />
+            <element signature="e#28702#28720#0" expanded="true" />
+            <element signature="e#29571#29612#0" expanded="true" />
+            <element signature="e#29659#29700#0" expanded="true" />
+            <element signature="e#30195#30213#0" expanded="true" />
+            <element signature="e#31064#31105#0" expanded="true" />
+            <element signature="e#31152#31193#0" expanded="true" />
+            <element signature="e#31688#31706#0" expanded="true" />
+            <element signature="e#32557#32598#0" expanded="true" />
+            <element signature="e#32645#32686#0" expanded="true" />
+            <element signature="e#33181#33199#0" expanded="true" />
+            <element signature="e#34348#34389#0" expanded="true" />
+            <element signature="e#34436#34477#0" expanded="true" />
+            <element signature="e#34972#34990#0" expanded="true" />
+            <element signature="e#35841#35882#0" expanded="true" />
+            <element signature="e#35929#35970#0" expanded="true" />
+            <element signature="e#36465#36483#0" expanded="true" />
+            <element signature="e#37334#37375#0" expanded="true" />
+            <element signature="e#37422#37463#0" expanded="true" />
+            <element signature="e#37958#37976#0" expanded="true" />
+            <element signature="e#38827#38868#0" expanded="true" />
+            <element signature="e#38915#38956#0" expanded="true" />
+            <element signature="e#39451#39469#0" expanded="true" />
+            <element signature="e#40618#40659#0" expanded="true" />
+            <element signature="e#40706#40747#0" expanded="true" />
+            <element signature="e#41242#41260#0" expanded="true" />
+            <element signature="e#42111#42152#0" expanded="true" />
+            <element signature="e#42199#42240#0" expanded="true" />
+            <element signature="e#42735#42753#0" expanded="true" />
+            <element signature="e#43604#43645#0" expanded="true" />
+            <element signature="e#43692#43733#0" expanded="true" />
+            <element signature="e#44228#44246#0" expanded="true" />
+            <element signature="e#45097#45138#0" expanded="true" />
+            <element signature="e#45185#45226#0" expanded="true" />
+            <element signature="e#45721#45739#0" expanded="true" />
+            <element signature="e#46888#46929#0" expanded="true" />
+            <element signature="e#46976#47017#0" expanded="true" />
+            <element signature="e#47512#47530#0" expanded="true" />
+            <element signature="e#48381#48422#0" expanded="true" />
+            <element signature="e#48469#48510#0" expanded="true" />
+            <element signature="e#49005#49023#0" expanded="true" />
+            <element signature="e#49874#49915#0" expanded="true" />
+            <element signature="e#49962#50003#0" expanded="true" />
+            <element signature="e#50498#50516#0" expanded="true" />
+            <element signature="e#51367#51408#0" expanded="true" />
+            <element signature="e#51455#51496#0" expanded="true" />
+            <element signature="e#51991#52009#0" expanded="true" />
+            <element signature="e#52794#52827#0" expanded="true" />
+            <element signature="e#52870#52911#0" expanded="true" />
+            <element signature="e#53111#53143#0" expanded="true" />
+            <element signature="e#53181#53199#0" expanded="true" />
+            <element signature="e#53248#53271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ListGroupLightActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43207127">
+          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5243243">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/ScriptMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6">
+          <caret line="578" column="46" selection-start-line="578" selection-start-column="46" selection-end-line="578" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/DeviceListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="39" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingGroupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="177" column="24" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
+          <folding>
+            <element signature="e#3064#7238#0" expanded="true" />
+            <element signature="e#6302#6472#0" expanded="true" />
+            <element signature="e#7237#7238#0" expanded="true" />
+            <element signature="method#loadArray#0;class#SettingGroupActivity#0" expanded="false" />
+            <element signature="method#onClickDelete#0;class#SettingGroupActivity#0" expanded="false" />
+            <element signature="method#deleteRecursive#0;class#SettingGroupActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/arduinosensors/SettingScriptActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3108108">
+          <caret line="170" column="55" selection-start-line="170" selection-start-column="55" selection-end-line="170" selection-end-column="55" />
+          <folding>
+            <element signature="e#2947#7929#0" expanded="true" />
+            <element signature="e#6867#7053#0" expanded="true" />
+            <element signature="e#7052#7053#0" expanded="true" />
+            <element signature="e#7928#7929#0" expanded="true" />
+            <element signature="method#saveArray#0;class#SettingScriptActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>

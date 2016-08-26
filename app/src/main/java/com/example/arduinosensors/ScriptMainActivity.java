@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -38,6 +39,7 @@ public class ScriptMainActivity extends Activity {
     Button btnLevelOne, btnLevelTwo;
     Button btnLevelThree;
     Button btnLevelFour;
+    ImageView btnShutdownControl;
 
     private ImageView mTurnDimScrip;
     SeekBar mSeekBar;
@@ -81,6 +83,8 @@ public class ScriptMainActivity extends Activity {
     private File fileData;
     private static FileOutputStream outputStream;
     private PrintWriter pw;
+
+    private Button mInfoSetting;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -128,6 +132,7 @@ public class ScriptMainActivity extends Activity {
         btnLevelTwo = (Button) findViewById(R.id.btnLevelTwo);
         btnLevelThree = (Button) findViewById(R.id.btnLevelThree);
         btnLevelFour = (Button) findViewById(R.id.btnLevelFour);
+        btnShutdownControl = (ImageView) findViewById(R.id.shutdown_control);
 
         mTurnDimScrip = (ImageView) findViewById(R.id.turn_dim_script);
 
@@ -143,11 +148,9 @@ public class ScriptMainActivity extends Activity {
         btAdapter = BluetoothAdapter.getDefaultAdapter();       // get Bluetooth adapter
         checkBTState();
 
-        // Set up onClick listeners for buttons to send 1 or 0 to turn on/off LED
         btnLevelOne.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 mConnectedThread.write("-2");    // Send "0" via Bluetooth
-                Toast.makeText(getBaseContext(), "Turn On Level One", Toast.LENGTH_SHORT).show();
                 btnLevelOne.setBackgroundResource(R.drawable.button_round);
                 btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
                 btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
@@ -165,13 +168,30 @@ public class ScriptMainActivity extends Activity {
                     c.printStackTrace();
                 }
 
+                final ProgressDialog dialog = new ProgressDialog(ScriptMainActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(false);
+
+                // set a message text
+                dialog.setMessage("Đang thực thi kịch bản 1...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
             }
         });
 
         btnLevelTwo.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 mConnectedThread.write("-3");    // Send "1" via Bluetooth
-                Toast.makeText(getBaseContext(), "Turn On Level Two", Toast.LENGTH_SHORT).show();
                 btnLevelTwo.setBackgroundResource(R.drawable.button_round);
                 btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
                 btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
@@ -188,6 +208,24 @@ public class ScriptMainActivity extends Activity {
                     c.printStackTrace();
                 }
 
+                final ProgressDialog dialog = new ProgressDialog(ScriptMainActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(false);
+
+                // set a message text
+                dialog.setMessage("Đang thực thi kịch bản 2...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
             }
         });
 
@@ -195,7 +233,6 @@ public class ScriptMainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mConnectedThread.write("-4");
-                Toast.makeText(getBaseContext(), "Turn On Level Three", Toast.LENGTH_SHORT).show();
                 btnLevelThree.setBackgroundResource(R.drawable.button_round);
                 btnLevelOne.setBackgroundResource(R.drawable.button_round_gray);
                 btnLevelTwo.setBackgroundResource(R.drawable.button_round_gray);
@@ -211,6 +248,25 @@ public class ScriptMainActivity extends Activity {
                 } catch (FileNotFoundException c) {
                     c.printStackTrace();
                 }
+
+                final ProgressDialog dialog = new ProgressDialog(ScriptMainActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(false);
+
+                // set a message text
+                dialog.setMessage("Đang thực thi kịch bản 3...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
             }
         });
 
@@ -218,7 +274,6 @@ public class ScriptMainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mConnectedThread.write("-5");
-                Toast.makeText(getBaseContext(), "Turn On Level Four", Toast.LENGTH_SHORT).show();
 
                 btnLevelFour.setBackgroundResource(R.drawable.button_round);
                 btnLevelThree.setBackgroundResource(R.drawable.button_round_gray);
@@ -235,6 +290,25 @@ public class ScriptMainActivity extends Activity {
                 } catch (FileNotFoundException c) {
                     c.printStackTrace();
                 }
+
+                final ProgressDialog dialog = new ProgressDialog(ScriptMainActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(false);
+
+                // set a message text
+                dialog.setMessage("Đang thực thi kịch bản 4...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
             }
         });
 
@@ -393,6 +467,13 @@ public class ScriptMainActivity extends Activity {
         });
 
 
+        btnShutdownControl.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScriptMainActivity.this,DeviceListActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         path = Environment.getExternalStorageDirectory().toString() + "/DimLight";
@@ -557,6 +638,18 @@ public class ScriptMainActivity extends Activity {
             btnLevelFour.setVisibility(View.INVISIBLE);
         }
 
+        mInfoSetting = (Button) findViewById(R.id.button_join_now);
+        mInfoSetting.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ScriptMainActivity.this,InfoSettingActivity.class);
+                intent.putExtra("address",address);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 
     private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
@@ -574,15 +667,6 @@ public class ScriptMainActivity extends Activity {
 
         //Get the MAC address from the DeviceListActivty via EXTRA
         address = intent.getStringExtra(DeviceListActivity.EXTRA_DEVICE_ADDRESS);
-
-//        // get code
-         code = intent.getStringExtra("code");
-
-        if (!code.isEmpty() && code.contains("1234")) {
-            mLogin.setVisibility(View.INVISIBLE);
-        } else {
-            mLogin.setVisibility(View.VISIBLE);
-        }
 
         //create device and set the MAC address
         BluetoothDevice device = btAdapter.getRemoteDevice(address);

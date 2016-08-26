@@ -9,7 +9,7 @@
     <string name="select_device_pair">Lựa chọn thiết bị để ghép đôi:</string>
     <string name="title_app">RANG DONG - SMART LIGHTING</string>
     <string name="title_dim_script">Chế Độ DIM</string>
-    <string name="join_now">Tham Gia Ngay</string>
+    <string name="join_now">Xem cấu hình</string>
     <string name="login">Login</string>
     <string name="script_1">Kịch Bản 1</string>
     <string name="script_2">Kịch Bản 2</string>
@@ -31,4 +31,7 @@
     <string name="list_lights_title">Danh sách đèn</string>
     <string name="control_script_title">Điều khiển kịch bản</string>
     <string name="follow_lights_title">Theo dõi trạng thái đèn</string>
+    <string name="info_setting_title">Thông tin cài đặt</string>
+    <string name="info_group_title">Thông tin nhóm</string>
+    <string name="info_script_title">Thông tin kịch bản</string>
 </resources>

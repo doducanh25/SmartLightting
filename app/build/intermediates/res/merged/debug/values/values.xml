@@ -345,8 +345,11 @@
     <string name="follow_lights_title">Theo dõi trạng thái đèn</string>
     <string name="follow_setting_screen">Theo dõi</string>
     <string name="hello_world">Hello world!</string>
+    <string name="info_group_title">Thông tin nhóm</string>
+    <string name="info_script_title">Thông tin kịch bản</string>
+    <string name="info_setting_title">Thông tin cài đặt</string>
     <string name="input_pass_login">Nhập mật khẩu</string>
-    <string name="join_now">Tham Gia Ngay</string>
+    <string name="join_now">Xem cấu hình</string>
     <string name="list_lights_title">Danh sách đèn</string>
     <string name="login">Login</string>
     <string name="login_title">Đăng nhập</string>

@@ -9,14 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_bar_title"
         android:background="@color/background_bar"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <ImageView
             android:layout_width="@dimen/button_script_main_height"
             android:layout_height="@dimen/button_script_main_height"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:background="@drawable/icon" />
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/icon"
+            android:layout_weight="0.1"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -26,7 +28,16 @@
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size_title"
             android:textStyle="italic"
-            android:layout_margin="@dimen/default_margin"/>
+            android:layout_margin="10dp"
+            android:layout_weight="2.8"/>
+        <ImageView
+            android:id="@+id/shutdown_control"
+            android:layout_width="@dimen/image_logo_size_setting_group"
+            android:layout_height="@dimen/image_logo_size_setting_group"
+            android:src="@drawable/ic_power"
+            android:layout_weight="0.1"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"/>
 
     </LinearLayout>
 

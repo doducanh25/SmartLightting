@@ -52,6 +52,10 @@
         "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\layout\\device_list.xml"
     },
     {
+        "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_info_setting.xml",
+        "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\layout\\activity_info_setting.xml"
+    },
+    {
         "merged": "E:\\DATA\\SmartLightting\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_detail_group_light.xml",
         "source": "E:\\DATA\\SmartLightting\\app\\src\\main\\res\\layout\\item_detail_group_light.xml"
     },

@@ -1,10 +1,12 @@
 package com.example.arduinosensors;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,6 +58,25 @@ public class DetailGroupLightActivity extends Activity implements DetailGroupLig
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                final ProgressDialog dialog = new ProgressDialog(DetailGroupLightActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(true);
+
+                // set a message text
+                dialog.setMessage("Đang load dữ liệu...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
                 Intent intent1 = new Intent(DetailGroupLightActivity.this,SettingGroupActivity.class);
                 intent1.putExtra("device_address",address);
 

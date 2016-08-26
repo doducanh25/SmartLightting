@@ -17,14 +17,18 @@ import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.SparseBooleanArray;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.gcm.Task;
@@ -89,9 +93,34 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingGroupActivity.this,SettingActivity.class);
-                intent.putExtra("device_address",address);
-                startActivity(intent);
+
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(SettingGroupActivity.this);
+                builder1.setMessage("Bạn có muốn lưu cấu hình nhóm không ?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent intent = new Intent(SettingGroupActivity.this,SettingActivity.class);
+                                intent.putExtra("device_address",address);
+                                startActivity(intent);
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
+
+
             }
         });
 
@@ -99,9 +128,7 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
         mSendApiGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
+                
                 File fSendGroup = new File(Environment.getExternalStorageDirectory() + "/" + "Group");
                 File fileGroup[] = fSendGroup.listFiles();
 
@@ -195,6 +222,10 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
                     }
                 }
 
+                Intent intent = new Intent(SettingGroupActivity.this,SettingActivity.class);
+                intent.putExtra("device_address",address);
+                startActivity(intent);
+
             }
         });
 
@@ -277,6 +308,68 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
 
                     }
 
+
+
+                });
+
+
+                mInputName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        if(actionId== EditorInfo.IME_ACTION_DONE){
+                            if (mInputName.getText().toString() != null && !mInputName.getText().toString().trim().isEmpty()) {
+                                groupsList.add(new Groups(mInputName.getText().toString(), groupsList.size() + 1,SettingGroupActivity.this));
+
+                            }
+                            mAddGroupNew.setVisibility(View.VISIBLE);
+                            mItemGroup.setVisibility(View.GONE);
+                            mGroupAdapter.setLight(groupsList);
+                            mListGroup.setAdapter(mGroupAdapter);
+                            saveArray(SettingGroupActivity.this, groupsList, "key");
+
+                            path = Environment.getExternalStorageDirectory().toString() + "/DucAnh";
+
+                            File f = new File(path);
+
+                            if (f.length() != 0) {
+
+                                File file[] = f.listFiles();
+
+                                for (int a = 0; a<file.length;a++) {
+
+                                    File f1 = new File(path,file[a].getName());
+
+                                    String nameScrip = f1.getName();
+
+                                    String[] nameSplitScript = nameScrip.split("-");
+
+                                    File fileData = new File(f1,
+                                            nameSplitScript[0] + "-" + mInputName.getText().toString() + ".txt");
+                                    String sData = mInputName.getText().toString() + "-" + "50";
+
+                                    try {
+                                        outputStream = new FileOutputStream(fileData);
+                                        pw = new PrintWriter(outputStream);
+                                        pw.append(sData);
+                                        pw.flush();
+                                        pw.close();
+
+                                    } catch (FileNotFoundException c) {
+                                        c.printStackTrace();
+                                    }
+                                }
+
+                            }
+                        }
+
+                        InputMethodManager inputManager = (InputMethodManager)
+                                getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                                InputMethodManager.HIDE_NOT_ALWAYS);
+
+                        return false;
+                    }
                 });
 
                 mGroupAdapter.setLight(groupsList);

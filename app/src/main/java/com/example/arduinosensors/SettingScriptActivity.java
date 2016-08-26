@@ -14,13 +14,17 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -84,9 +88,34 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(SettingScriptActivity.this, SettingActivity.class);
-                intent1.putExtra("device_address", address);
-                startActivity(intent1);
+
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(SettingScriptActivity.this);
+                builder1.setMessage("Bạn có muốn lưu cấu hình kịch bản không ?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent intent1 = new Intent(SettingScriptActivity.this, SettingActivity.class);
+                                intent1.putExtra("device_address", address);
+                                startActivity(intent1);
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
+
+
             }
         });
 
@@ -206,6 +235,10 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
                 }
 
 
+                Intent intent1 = new Intent(SettingScriptActivity.this, SettingActivity.class);
+                intent1.putExtra("device_address", address);
+                startActivity(intent1);
+
 
             }
         });
@@ -282,6 +315,58 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
                             }
                         }
 
+                    }
+                });
+
+
+                mInputName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        if (actionId == EditorInfo.IME_ACTION_DONE) {
+                            if (mInputName.getText().toString() != null && !mInputName.getText().toString().trim().isEmpty()) {
+                                scriptsList.add(new Scripts(mInputName.getText().toString(), scriptsList.size() + 1));
+                            }
+                            mAddGroupNew.setVisibility(View.VISIBLE);
+                            mItemGroup.setVisibility(View.GONE);
+                            mScriptAdapter.setScripts(scriptsList);
+                            mListScript.setAdapter(mScriptAdapter);
+                            saveArray(SettingScriptActivity.this, scriptsList, "key_script");
+
+                            SettingGroupActivity.loadArray(SettingScriptActivity.this, "key");
+
+                            f1 = new File(Environment.getExternalStorageDirectory() + "/" + "DucAnh", mInputName.getText().toString());
+                            if (!f1.exists()) {
+                                f1.mkdirs();
+                            }
+
+                            file1 = f1.listFiles();
+
+                            if (file1.length == 0) {
+                                for (int e = 0; e < SettingGroupActivity.groupsList.size(); e++) {
+                                    fileData = new File(f1,
+                                            mInputName.getText().toString().trim() + "-" + SettingGroupActivity.groupsList.get(e).getmNameGroupLight() + ".txt");
+                                    sData = SettingGroupActivity.groupsList.get(e).getmNameGroupLight() + "-" + "50";
+                                    try {
+                                        outputStream = new FileOutputStream(fileData);
+                                        pw = new PrintWriter(outputStream);
+                                        pw.append(sData);
+                                        pw.flush();
+                                        pw.close();
+
+                                    } catch (FileNotFoundException c) {
+                                        c.printStackTrace();
+                                    }
+                                }
+                            }
+                        }
+
+                        InputMethodManager inputManager = (InputMethodManager)
+                                getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                                InputMethodManager.HIDE_NOT_ALWAYS);
+
+                        return false;
                     }
                 });
 
@@ -391,7 +476,7 @@ public class SettingScriptActivity extends Activity implements ScriptAdapter.OnC
         Intent intent = new Intent(this, DetailScriptActivity.class);
         String value = scriptsList.get(postion).getmNameScript();
         intent.putExtra("name_script", value);
-        intent.putExtra("device_address",address);
+        intent.putExtra("device_address", address);
         startActivity(intent);
     }
 

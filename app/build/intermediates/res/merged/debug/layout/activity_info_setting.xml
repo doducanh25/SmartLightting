@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_bar"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_bar_title"
+        android:background="@color/background_bar"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="@dimen/button_script_main_height"
+            android:layout_height="@dimen/button_script_main_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.1"
+            android:background="@drawable/icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="2.8"
+            android:text="@string/info_setting_title"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/shutdown_control"
+            android:layout_width="@dimen/image_logo_size_setting_group"
+            android:layout_height="@dimen/image_logo_size_setting_group"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_power" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/background_view_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_item_group"
+                    android:padding="10dp"
+                    android:text="@string/info_script_title"
+                    android:textColor="@color/text_while"
+                    android:textSize="@dimen/text_size"/>
+
+                <TextView
+                    android:id="@+id/display_info_script"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_item_group"
+                    android:padding="10dp"
+                    android:text="@string/info_group_title"
+                    android:textColor="@color/text_while"
+                    android:textSize="@dimen/text_size"/>
+
+                <TextView
+                    android:id="@+id/display_info_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

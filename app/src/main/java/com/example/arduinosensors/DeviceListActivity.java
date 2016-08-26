@@ -114,7 +114,6 @@ public class DeviceListActivity extends Activity {
                 // Make an intent to start next activity while taking an extra which is the MAC address.
                 Intent i = new Intent(DeviceListActivity.this, ScriptMainActivity.class);
                 i.putExtra(EXTRA_DEVICE_ADDRESS, address);
-                i.putExtra("code","1");
                 startActivity(i);
             } else {
                 Log.d(TAG, "Not Devices");

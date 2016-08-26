@@ -92,6 +92,13 @@
 
         </activity>
 
+        <activity
+            android:name=".InfoSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
+        </activity>
+
     </application>
 
 </manifest>

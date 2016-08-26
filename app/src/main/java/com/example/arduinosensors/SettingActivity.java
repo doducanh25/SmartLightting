@@ -1,8 +1,10 @@
 package com.example.arduinosensors;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -31,9 +33,31 @@ public class SettingActivity extends Activity {
         mlayoutSettingGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                final ProgressDialog dialog = new ProgressDialog(SettingActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(true);
+
+                // set a message text
+                dialog.setMessage("Đang load dữ liệu...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
                 Intent intent = new Intent(SettingActivity.this,SettingGroupActivity.class);
                 intent.putExtra("device_address",address);
                 startActivity(intent);
+
+
+
             }
         });
 
@@ -41,6 +65,25 @@ public class SettingActivity extends Activity {
         mLayoutSettingScript.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                final ProgressDialog dialog = new ProgressDialog(SettingActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(true);
+
+                // set a message text
+                dialog.setMessage("Đang load dữ liệu...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
                 Intent intent = new Intent(SettingActivity.this,SettingScriptActivity.class);
                 intent.putExtra("device_address",address);
                 startActivity(intent);
@@ -53,9 +96,26 @@ public class SettingActivity extends Activity {
             @Override
             public void onClick(View v) {
 
+                final ProgressDialog dialog = new ProgressDialog(SettingActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(true);
+
+                // set a message text
+                dialog.setMessage("Đang load dữ liệu...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
                 Intent intent = new Intent(SettingActivity.this,ScriptMainActivity.class);
                 intent.putExtra("device_address",address);
-                intent.putExtra("code","1234");
                 startActivity(intent);
 
             }

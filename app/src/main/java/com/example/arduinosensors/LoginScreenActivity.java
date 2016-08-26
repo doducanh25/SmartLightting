@@ -55,7 +55,7 @@ public class LoginScreenActivity extends Activity {
 
                 String input = mInputPassWord.getText().toString();
 
-                if (input.contains("1234")) {
+                if (input.contains("1234")&& input.length() == 4) {
                     Intent int_send_setting = new Intent(LoginScreenActivity.this,SettingActivity.class);
                     int_send_setting.putExtra("device_address", address);
                     startActivity(int_send_setting);

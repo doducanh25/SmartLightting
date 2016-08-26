@@ -1,11 +1,13 @@
 package com.example.arduinosensors;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +68,25 @@ public class DetailScriptActivity extends Activity {
         mAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                final ProgressDialog dialog = new ProgressDialog(DetailScriptActivity.this);
+
+                // make the progress bar cancelable
+                dialog.setCancelable(true);
+
+                // set a message text
+                dialog.setMessage("Đang load dữ liệu...");
+
+                // show it
+                dialog.show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
                 Intent intent1 = new Intent(DetailScriptActivity.this, SettingScriptActivity.class);
                 intent1.putExtra("device_address",address);
                 startActivity(intent1);

@@ -128,7 +128,7 @@ public class SettingGroupActivity extends Activity implements GroupLightAdapter.
         mSendApiGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 File fSendGroup = new File(Environment.getExternalStorageDirectory() + "/" + "Group");
                 File fileGroup[] = fSendGroup.listFiles();
 

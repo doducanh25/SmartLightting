@@ -345,7 +345,6 @@ public class ScriptMainActivity extends Activity {
                                     try {
                                         while ((valueDim = reader.readLine()) != null) {
                                             mConnectedThread.write(String.valueOf(Integer.parseInt(valueDim) + 100));
-                                            Toast.makeText(getBaseContext(), "DIM"+ "-" + valueDim, Toast.LENGTH_SHORT).show();
 
                                         }
                                         is.close();
@@ -392,27 +391,22 @@ public class ScriptMainActivity extends Activity {
                                     try {
                                         while ((dataScriptFile = readerFile.readLine()) != null) {
 
-//                                            String[] item = dataScript.split("-");
-//                                            byte ptext[] = item[1].getBytes();
-//                                            String value = new String(ptext, "UTF-8");
-
-
                                             switch (dataScriptFile){
                                                 case script1:
                                                     mConnectedThread.write("-2");
-                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+
                                                     break;
                                                 case script2:
                                                     mConnectedThread.write("-3");
-                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+
                                                     break;
                                                 case script3:
                                                     mConnectedThread.write("-4");
-                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+
                                                     break;
                                                 default :
                                                     mConnectedThread.write("-5");
-                                                    Toast.makeText(getBaseContext(), "Send"+ "-" + dataScriptFile, Toast.LENGTH_SHORT).show();
+
                                                     break;
                                             }
 //
@@ -532,7 +526,7 @@ public class ScriptMainActivity extends Activity {
                                         }
 
                                         mConnectedThread.write(String.valueOf(progressBar + 100));
-                                        Toast.makeText(getBaseContext(),"DIM" +"-"+ String.valueOf(progressBar + 100), Toast.LENGTH_SHORT).show();
+
 
                                     }
                                 });

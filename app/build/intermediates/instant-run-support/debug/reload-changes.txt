@@ -1,9 +1,9 @@
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$3$override.class
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$2$1$override.class
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$2$override.class
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$3$1$override.class
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$2$2$override.class
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$3$2$override.class
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$ConnectedThreadGroup$override.class
-CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\SettingGroupActivity$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$10$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$8$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$7$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$9$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$11$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$ConnectedThread$override.class
+CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\arduinosensors\ScriptMainActivity$6$override.class
 CHANGED,E:\DATA\SmartLightting\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
